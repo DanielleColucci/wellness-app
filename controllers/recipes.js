@@ -62,10 +62,29 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  Recipe.findById(req.params.id) 
+  .then(recipe => {
+    if (recipe.owner.equals(req.user.profile._id)) {
+      recipe.updateOne(req.body)
+      .then(() => {
+        res.redirect(`/recipes/${recipe._id}`)
+      })
+    } else {
+      throw new Error('NOT AUTHORIZED')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/recipes')
+  })
+}
+
 export {
   index,
   newRecipe as new,
   create,
   show, 
   edit, 
+  update, 
 }
