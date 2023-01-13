@@ -10,6 +10,9 @@ router.get('/', recipesCtrl.index)
 // GET /recipes/new
 router.get('/new', isLoggedIn, recipesCtrl.new)
 
+// POST /recipes
+router.post('/', isLoggedIn, recipesCtrl.create)
+
 export {
   router
 }

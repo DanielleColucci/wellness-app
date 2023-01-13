@@ -20,7 +20,20 @@ function newRecipe(req, res) {
   })
 }
 
+function create(req, res) {
+  req.body.owner = req.user.profile._id
+  Recipe.create(req.body) 
+  .then(recipe => {
+    res.redirect('/recipes')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/recipes')
+  })
+}
+
 export {
   index,
   newRecipe as new,
+  create,
 }
