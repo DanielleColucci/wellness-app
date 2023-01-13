@@ -2,6 +2,7 @@ import { Recipe } from '../models/recipe.js'
 
 function index(req, res) {
   Recipe.find({})
+  .populate('owner')
   .then(recipes => {
     res.render('recipes/index', {
       recipes, 
