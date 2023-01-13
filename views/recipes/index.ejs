@@ -1,0 +1,30 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1><%= title %></h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Recipe Name</th>
+        <th>Meal</th>
+        <th>User</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% recipes.forEach(recipe => { %>
+        <tr>
+          <td><%= recipe.name %></td>
+          <td><%= recipe.meal %></td>
+          <td><%= recipe.owner %></td>
+          <td>
+
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</section>
+
+<%- include('../partials/footer') %>
