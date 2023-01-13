@@ -1,0 +1,23 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= recipe.name %></h1>
+  <h2>Posted by <%= recipe.owner.name %></h2>
+  <section>
+    <div>Meal:</div>
+    <div><%= recipe.meal %></div>
+    <div>Estimated Time: </div>
+    <div><%= recipe.estTime %> minutes</div>
+    <div>Ingredients: </div>
+    <ul>
+      <% recipe.ingredients.forEach(ingredient => { %>
+        <li><%= ingredient.name %></li>
+      <% }) %>
+    </ul>
+    <div>Instructions: </div>
+    <div><%= recipe.instructions %></div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

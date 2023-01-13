@@ -38,7 +38,8 @@ function show(req, res) {
   .populate('owner')
   .then(recipe => {
     res.render('recipes/show', {
-      recipe
+      recipe, 
+      title: recipe.name
     })
   })
   .catch(err => {

@@ -21,7 +21,7 @@ const recipeSchema = new Schema({
   owner: {type: Schema.Types.ObjectId, ref:'Profile'},
   estTime: Number,
   meal: {type: String, enum: ['Breakfast', 'Lunch', 'Dinner', 'Other']},
-  ingredients: {type: Schema.Types.ObjectId, ref: 'Ingredient'},
+  ingredients: [{type: Schema.Types.ObjectId, ref: 'Ingredient'}],
   reviews: [reviewSchema],
   instructions: String
 }, {
