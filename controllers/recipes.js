@@ -80,6 +80,24 @@ function update(req, res) {
   })
 }
 
+function deleteRecipe(req, res) {
+  Recipe.findById(req.params.id)
+  .then(recipe => {
+    if (recipe.owner.equals(req.user.profile._id)) {
+      recipe.delete()
+      .then(() => {
+        res.redirect('/recipes')
+      })
+    } else {
+      throw new Error('NOT AUTHORIZED')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/recipes')
+  })
+}
+
 export {
   index,
   newRecipe as new,
@@ -87,4 +105,5 @@ export {
   show, 
   edit, 
   update, 
+  deleteRecipe as delete,
 }

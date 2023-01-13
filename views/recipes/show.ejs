@@ -9,6 +9,9 @@
       <a href="/recipes/<%= recipe._id %>/edit">
         <button type="submit">Edit Recipe</button>
       </a>
+      <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete Recipe</button>
+      </form>
     </section>
   <% } %>
   <section>

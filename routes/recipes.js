@@ -22,6 +22,9 @@ router.post('/', isLoggedIn, recipesCtrl.create)
 // PUT /recipes/:id
 router.put('/:id', isLoggedIn, recipesCtrl.update)
 
+// DELETE /recipes/:id
+router.delete('/:id', isLoggedIn, recipesCtrl.delete)
+
 export {
   router
 }
