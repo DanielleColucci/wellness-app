@@ -4,6 +4,13 @@
 <main>
   <h1><%= recipe.name %></h1>
   <h2>Posted by <%= recipe.owner.name %></h2>
+  <% if (recipe.owner.equals(user?.profile._id)) { %>
+    <section>
+      <a href="/recipes/<%= recipe._id %>/edit">
+        <button type="submit">Edit Recipe</button>
+      </a>
+    </section>
+  <% } %>
   <section>
     <div>Meal:</div>
     <div><%= recipe.meal %></div>

@@ -13,6 +13,9 @@ router.get('/new', isLoggedIn, recipesCtrl.new)
 // GET /recipes/:id
 router.get('/:id', recipesCtrl.show)
 
+// GET /recipes/:id/edit
+router.get('/:id/edit', isLoggedIn, recipesCtrl.edit)
+
 // POST /recipes
 router.post('/', isLoggedIn, recipesCtrl.create)
 
