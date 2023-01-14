@@ -120,6 +120,21 @@ function createReview(req, res) {
   })
 }
 
+function addIngredient(req, res) {
+  Recipe.findById(req.params.id) 
+  .then(recipe => {
+    recipe.ingredients.push(req.body.ingredientId)
+    recipe.save()
+    .then(() => {
+      res.redirect(`/recipes/${recipe._id}/edit`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/recipes')
+  })
+}
+
 export {
   index,
   newRecipe as new,
@@ -128,5 +143,6 @@ export {
   edit, 
   update, 
   deleteRecipe as delete,
-  createReview
+  createReview,
+  addIngredient,
 }
