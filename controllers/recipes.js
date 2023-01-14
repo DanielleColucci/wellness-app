@@ -37,6 +37,7 @@ function create(req, res) {
 function show(req, res) {
   Recipe.findById(req.params.id)
   .populate('owner')
+  .populate('ingredients')
   .then(recipe => {
     res.render('recipes/show', {
       recipe, 
@@ -51,6 +52,7 @@ function show(req, res) {
 
 function edit(req, res) {
   Recipe.findById(req.params.id)
+  .populate('ingredients')
   .then(recipe => {
     Ingredient.find({_id: {$nin: recipe.ingredients}})
     .then(ingredients => {

@@ -6,8 +6,6 @@
   <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
     <label for="name-input">Name:</label>
     <input type="text" name="name" id="name-input" required autocomplete="off" value="<%= recipe.name %>">
-    <label for="time-input">Estimated Time (in minutes):</label>
-    <input type="number" name="estTime" id="time-input" value="<%= recipe.estTime %>">
     <label for="meal-select">Meal:</label>
     <select name="meal" id="meal-select">
       <option value="<%= recipe.meal %>"><%= recipe.meal %></option>
@@ -16,13 +14,15 @@
       <option value="Dinner">Dinner</option>
       <option value="Other">Other</option>
     </select>
+    <label for="time-input">Estimated Time (in minutes):</label>
+    <input type="number" name="estTime" id="time-input" value="<%= recipe.estTime %>">
     <label for="instructions-textarea">Instructions:</label>
     <textarea name="instructions" id="instructions-textarea" autocomplete="off"><%= recipe.instructions %></textarea>
     <button type="submit">Update Recipe</button>
   </form>
   <section>
     <h2>Add ingredients to your recipe!</h2>
-    <p>Make sure to hit the update button above to save changes!</p>
+    <p>Make sure to hit the update button above to save all changes!</p>
     <form action="/recipes/<%= recipe._id %>/ingredients" method="POST">
       <select name="ingredientId" id="ingredient-select">
         <% ingredients.forEach(ingredient => { %>
@@ -31,6 +31,12 @@
       </select>
       <button type="submit">Add Ingredient</button>
     </form>
+    <p>Current Ingredients:</p>
+    <ul>
+      <% recipe.ingredients.forEach(ingredient => { %>
+        <li><%= ingredient.name %> (<%= ingredient.foodGroup %>)</li>
+      <% }) %>
+    </ul>
   </section>
   <section>
     <h3>Need to create new ingredients for your recipe? Add Below!</h3>

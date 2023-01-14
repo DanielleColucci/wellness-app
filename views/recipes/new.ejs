@@ -6,8 +6,6 @@
   <form action="/recipes" method="POST">
     <label for="name-input">Name:</label>
     <input type="text" name="name" id="name-input" required autocomplete="off">
-    <label for="time-input">Estimated Time (in minutes):</label>
-    <input type="number" name="estTime" id="time-input">
     <label for="meal-select">Meal:</label>
     <select name="meal" id="meal-select">
       <option value="Breakfast">Breakfast</option>
@@ -15,6 +13,8 @@
       <option value="Dinner">Dinner</option>
       <option value="Other">Other</option>
     </select>
+    <label for="time-input">Estimated Time (in minutes):</label>
+    <input type="number" name="estTime" id="time-input">
     <label for="instructions-textarea">Instructions:</label>
     <textarea name="instructions" id="instructions-textarea" autocomplete="off"></textarea>
     <button type="submit">Create Recipe!</button>

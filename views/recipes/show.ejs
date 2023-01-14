@@ -22,7 +22,7 @@
     <div>Ingredients: </div>
     <ul>
       <% recipe.ingredients.forEach(ingredient => { %>
-        <li><%= ingredient.name %></li>
+        <li><%= ingredient.name %> (<%= ingredient.foodGroup %>)</li>
       <% }) %>
     </ul>
     <div>Instructions: </div>
