@@ -1,4 +1,5 @@
 import { Recipe } from '../models/recipe.js'
+import { Profile } from '../models/profile.js'
 
 function index(req, res) {
   Recipe.find({})
@@ -99,6 +100,7 @@ function deleteRecipe(req, res) {
 }
 
 function createReview(req, res) {
+  req.body.owner = req.user.profile.name
   Recipe.findById(req.params.id) 
   .then(recipe => {
     recipe.reviews.push(req.body)

@@ -45,6 +45,19 @@
       </form>
     <% } %> 
   </section>
+  <section>
+    <% if (recipe.reviews.length) { %>
+      <ul>
+        <% recipe.reviews.forEach(review => { %>
+          <li>
+            <%= review.owner %>
+            <%= review.content %>
+            <%= review.rating %>
+          </li>
+        <% }) %>
+      </ul>
+    <% } %> 
+  </section>
 </main>
 
 <%- include('../partials/footer') %>
