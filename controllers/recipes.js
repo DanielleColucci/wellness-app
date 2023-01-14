@@ -100,7 +100,8 @@ function deleteRecipe(req, res) {
 }
 
 function createReview(req, res) {
-  req.body.owner = req.user.profile.name
+  req.body.owner = req.user.profile._id
+  req.body.name = req.user.profile.name
   Recipe.findById(req.params.id) 
   .then(recipe => {
     recipe.reviews.push(req.body)
