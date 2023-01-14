@@ -20,6 +20,26 @@
     <textarea name="instructions" id="instructions-textarea" autocomplete="off"><%= recipe.instructions %></textarea>
     <button type="submit">Update Recipe</button>
   </form>
+  <section>
+    <h2>Need to create new ingredients for your recipe? Add Below!</h2>
+    <p>Please ensure that the ingredient you are looking for does not already exist</p>
+    <form action="/ingredients" method="POST">
+      <label for="name-input">Name:</label>
+      <input type="text" name="name" id="name-input" required autocomplete="off">
+      <label for="food-group-select">Food Group:</label>
+      <select name="foodGroup" id="food-group-select" required>
+        <option value="Vegetable">Vegetable</option>
+        <option value="Meat/Fish">Meat/Fish</option>
+        <option value="Grain">Grain</option>
+        <option value="Dairy">Dairy</option>
+        <option value="Fat/Oil">Fat/Oil</option>
+        <option value="Fruit">Fruit</option>
+        <option value="Herb/Spice">Herb/Spice</option>
+        <option value="Other">Other</option>
+      </select>
+      <button type="submit">Create</button>
+    </form >
+  </section>
 </main>
 
 <%- include('../partials/footer') %>
