@@ -28,6 +28,23 @@
     <div>Instructions: </div>
     <div><%= recipe.instructions %></div>
   </section>
+  <section>
+    <% if (user) { %>
+      <form action="/recipes/<%= recipe._id %>/reviews" method="POST">
+        <label for="content-textarea">Review:</label>
+        <textarea name="content" id="content-textarea"></textarea>
+        <label for="rating-select"></label>
+        <select name="rating" id="rating-select">
+          <option value="5" selected>5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1</option>
+        </select>
+        <button type="submit">Submit Review</button>
+      </form>
+    <% } %> 
+  </section>
 </main>
 
 <%- include('../partials/footer') %>

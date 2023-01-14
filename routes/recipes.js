@@ -19,6 +19,9 @@ router.get('/:id/edit', isLoggedIn, recipesCtrl.edit)
 // POST /recipes
 router.post('/', isLoggedIn, recipesCtrl.create)
 
+// POST /recipes/:id/reviews
+router.post('/:id/reviews', isLoggedIn, recipesCtrl.createReview)
+
 // PUT /recipes/:id
 router.put('/:id', isLoggedIn, recipesCtrl.update)
 
