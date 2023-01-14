@@ -125,7 +125,7 @@ function createReview(req, res) {
 function addIngredient(req, res) {
   Recipe.findById(req.params.id) 
   .then(recipe => {
-    recipe.ingredients.push(req.body.ingredientId)
+    recipe.ingredients.push(req.params.ingredientId)
     recipe.save()
     .then(() => {
       res.redirect(`/recipes/${recipe._id}/edit`)
