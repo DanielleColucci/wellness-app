@@ -41,7 +41,7 @@
   <section>
     <h3>Need to create new ingredients for your recipe? Add Below!</h3>
     <p>Please ensure that the ingredient you are looking for does not already exist</p>
-    <form action="/ingredients" method="POST">
+    <form action="/ingredients/<%= recipe._id %>" method="POST">
       <label for="name-input">Name:</label>
       <input type="text" name="name" id="name-input" required autocomplete="off">
       <label for="food-group-select">Food Group:</label>
