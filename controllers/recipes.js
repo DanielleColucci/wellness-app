@@ -1,5 +1,5 @@
 import { Recipe } from '../models/recipe.js'
-import { Profile } from '../models/profile.js'
+import { Ingredient } from '../models/ingredient.js'
 
 function index(req, res) {
   Recipe.find({})
@@ -52,9 +52,13 @@ function show(req, res) {
 function edit(req, res) {
   Recipe.findById(req.params.id)
   .then(recipe => {
-    res.render('recipes/edit', {
-      recipe, 
-      title: 'Edit Recipe'
+    Ingredient.find({_id: {$nin: recipe.ingredients}})
+    .then(ingredients => {
+      res.render('recipes/edit', {
+        recipe, 
+        ingredients,
+        title: 'Edit Recipe'
+      })
     })
   })
   .catch(err => {
