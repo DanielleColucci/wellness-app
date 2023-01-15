@@ -21,12 +21,49 @@ body {
 }
 
 nav {
-  background-color: #f6f6f6;
-  color: #1a1a1a;
+  font-family: 'Poppins', sans-serif;
+  background-color: #D9C1E2;
+  color: #363636;
   display: flex;
   align-items: center;
   padding: 10px;
-  min-height: 60px;
+  min-height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav > div {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+#nav-links > a {
+  padding: 8px;
+}
+
+#nav-links > a:hover {
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #e8e8e8;
+}
+
+#logout-link {
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #e8e8e8;
+  padding: 4px 8px;
+}
+
+#logout-link > button {
+  background: none;
+  border: none;
+  font-size: 16px;
+}
+
+#nav-links > a:visited {
+  color: #363636;
 }
 
 main {
@@ -36,6 +73,14 @@ main {
   flex-direction: column;
 }
 
-.right {
+/* .right {
   margin-left: auto;
+} */
+
+a {
+  text-decoration: none;
+}
+
+button:hover {
+  cursor: pointer;
 }
