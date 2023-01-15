@@ -12,18 +12,16 @@ html {
 }
 
 body {
-  background-color: #1a1a1a;
-  color: #f6f6f6;
+  background-color: white;
+  color: #3b4274;
   /* Use a system font, if none are available use any found sans-sarif font */
-  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
+  font-family: 'Poppins', system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
   margin: 0;
 }
 
 nav {
-  font-family: 'Poppins', sans-serif;
-  background-color: #D9C1E2;
-  color: #363636;
+  background-color: #4e5897;
   display: flex;
   align-items: center;
   padding: 10px;
@@ -40,31 +38,35 @@ nav > div {
 }
 
 #nav-links > a {
+  color: white;
   padding: 8px;
+}
+
+#nav-links > a:visited {
+  color: white;
 }
 
 #nav-links > a:hover {
   background-color: white;
+  color: #3b4274;
   border-radius: 5px;
-  border: 1px solid #e8e8e8;
+  border: 1px solid #c3c3c3;
 }
 
 #logout-link {
   background-color: white;
   border-radius: 5px;
-  border: 1px solid #e8e8e8;
+  border: 1px solid #c3c3c3;
   padding: 4px 8px;
 }
 
 #logout-link > button {
+  color: #3b4274;
   background: none;
   border: none;
   font-size: 16px;
 }
 
-#nav-links > a:visited {
-  color: #363636;
-}
 
 main {
   display: flex;
@@ -72,10 +74,6 @@ main {
   justify-content: center;
   flex-direction: column;
 }
-
-/* .right {
-  margin-left: auto;
-} */
 
 a {
   text-decoration: none;

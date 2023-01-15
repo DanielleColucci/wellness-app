@@ -1,7 +1,8 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/recipes/index.css">
 <%- include('../partials/nav') %>
 
-<section>
+<main>
   <h1><%= title %></h1>
   <table>
     <thead>
@@ -17,7 +18,10 @@
         <tr>
           <td><%= recipe.name %></td>
           <td><%= recipe.meal %></td>
-          <td><%= recipe.owner.name %></td>
+          <td>
+            <img src="<%= recipe.owner.avatar %>" alt="<%= recipe.owner.name %>'s avatar">
+            <%= recipe.owner.name %>
+          </td>
           <td>
             <a href="/recipes/<%= recipe._id %>">Details</a>
           </td>
@@ -25,6 +29,6 @@
       <% }) %>
     </tbody>
   </table>
-</section>
+</main>
 
 <%- include('../partials/footer') %>

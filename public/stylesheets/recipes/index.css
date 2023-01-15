@@ -1,0 +1,42 @@
+main {
+  background-color: #d6daf5;
+  margin: 0 48px;
+  height: 100vh;
+  justify-content: flex-start;
+}
+
+a {
+  color: #3b4274;
+}
+
+table {
+  width: 90%;
+}
+
+th {
+  font-size: 24px;
+  border-bottom: 2px solid #3b4274;
+}
+
+tr {
+  font-size: 20px;
+  height: 48px;
+  vertical-align: middle;
+}
+
+img {
+  height: 32px;
+  vertical-align: middle;
+}
+
+td:first-child {
+  font-weight: bold;
+}
+
+td:nth-child(2), td:last-child {
+  text-align: center;
+}
+
+td:nth-child(3) {
+  margin: 4px;
+}
