@@ -7,6 +7,9 @@ const router = Router()
 // GET /profiles
 router.get('/', isLoggedIn, profilesCtrl.index)
 
+// GET /profiles/:id
+router.get('/:id', isLoggedIn, profilesCtrl.show)
+
 export {
   router
 }
