@@ -1,5 +1,6 @@
 import { Recipe } from '../models/recipe.js'
 import { Ingredient } from '../models/ingredient.js'
+import { Profile } from '../models/profile.js'
 
 function index(req, res) {
   Recipe.find({})
@@ -26,7 +27,14 @@ function create(req, res) {
   req.body.owner = req.user.profile._id
   Recipe.create(req.body) 
   .then(recipe => {
-    res.redirect('/recipes')
+    Profile.findById(req.user.profile._id)
+    .then(profile => {
+      profile.recipes.push(recipe)
+      profile.save()
+      .then(() => {
+        res.redirect('/recipes')
+      })
+    })
   })
   .catch(err => {
     console.log(err)
@@ -92,8 +100,17 @@ function deleteRecipe(req, res) {
   .then(recipe => {
     if (recipe.owner.equals(req.user.profile._id)) {
       recipe.delete()
-      .then(() => {
-        res.redirect('/recipes')
+      Profile.findById(req.user.profile._id)
+      .then(profile => {
+        profile.recipes.forEach((recipe, idx) => {
+          if (recipe._id.equals(req.params.id)) {
+            profile.recipes.splice(idx, 1)
+            profile.save()
+            .then(() => {
+              res.redirect('/recipes')
+            })
+          }
+        })
       })
     } else {
       throw new Error('NOT AUTHORIZED')
