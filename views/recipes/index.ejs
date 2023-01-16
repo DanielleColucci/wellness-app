@@ -10,17 +10,19 @@
     </section>
   </div>
   <section id="content">
-    <% recipes.forEach(recipe => { %>
-      <div class="card">
-        <div class="card-title">
-          <h2><%= recipe.name %></h2>
-          <h3><%= recipe.owner.name %></h3>
+    <div id="card-container">
+      <% recipes.forEach(recipe => { %>
+        <div class="card">
+          <div class="card-title">
+            <h2><%= recipe.name %></h2>
+            <h3><%= recipe.owner.name %></h3>
+          </div>
+          <div class="details-button">
+            <a href="/recipes/<%= recipe._id %>">Details→	</a>
+          </div>
         </div>
-        <div class="details-button">
-          <a href="/recipes/<%= recipe._id %>">Details→	</a>
-        </div>
-      </div>
-    <% }) %>
+      <% }) %>
+    </div>
   </section>
 </main>
 

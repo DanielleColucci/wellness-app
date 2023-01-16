@@ -35,12 +35,16 @@
   height: 100vh;
   width: 90%;
   max-width: 900px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10%;
   padding: 20px 50px;
+}
+
+#card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  gap: 5%;
+  justify-items: center;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
 }
 
 .card { 
@@ -50,8 +54,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 150px;
-  width: 200px;
+  height: 250px;
+  width: 300px;
 }
 
 .card-title {
