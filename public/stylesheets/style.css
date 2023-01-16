@@ -87,3 +87,7 @@ a {
 button:hover {
   cursor: pointer;
 }
+
+button {
+  font-family: 'Poppins', sans-serif;
+}

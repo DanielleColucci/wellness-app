@@ -1,52 +1,78 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/recipes/show.css">
 <%- include('../partials/nav') %>
 
 <main>
   <h1><%= recipe.name %></h1>
-  <h2>Posted by <%= recipe.owner.name %></h2>
-  <% if (recipe.owner.equals(user?.profile._id)) { %>
-    <section>
-      <a href="/recipes/<%= recipe._id %>/edit">
-        <button type="submit">Edit Recipe</button>
-      </a>
-      <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete Recipe</button>
-      </form>
-    </section>
-  <% } %>
-  <section>
-    <div>Meal:</div>
-    <div><%= recipe.meal %></div>
-    <div>Estimated Time: </div>
-    <div><%= recipe.estTime %> minutes</div>
-    <div>Ingredients: </div>
-    <ul>
-      <% recipe.ingredients.forEach(ingredient => { %>
-        <li><%= ingredient.name %> (<%= ingredient.foodGroup %>)</li>
-      <% }) %>
-    </ul>
-    <div>Instructions: </div>
-    <div><%= recipe.instructions %></div>
-  </section>
-  <section>
+  <div id="recipe">
+    <div id="recipe-header">
+      <div id="header-left">
+        <div><%= recipe.meal %></div>
+        <div>Estimated Time: <%= recipe.estTime %> minutes</div>
+      </div>
+      <div id="header-right">
+        <p>Posted by:</p>
+        <p>
+          <img src="<%= recipe.owner.avatar %>" alt="<%= recipe.owner.name %>'s avatar">
+          <%= recipe.owner.name %>
+        </p>
+        <% if (recipe.owner.equals(user?.profile._id)) { %>
+          <section>
+            <a href="/recipes/<%= recipe._id %>/edit">
+              Edit Recipe
+            </a>
+            <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+              <button type="submit">Delete Recipe</button>
+            </form>
+          </section>
+        <% } %>
+      </div>
+    </div>
+    <div id="recipe-content">
+      <section>
+        <div id="ingredients">
+          <p>Ingredients:</p>
+          <% if (recipe.ingredients.length) { %>
+            <ul>
+              <% recipe.ingredients.forEach(ingredient => { %>
+                <li><%= ingredient.name %> (<%= ingredient.foodGroup %>)</li>
+              <% }) %>
+            </ul>
+          <% } else { %> 
+            <p>No ingredients yet selected.</p>
+          <% } %> 
+        </div>
+        <div id="instructions">
+          <p>Preparation: </p>
+          <p><%= recipe.instructions %></p>
+        </div>
+      </section>
+    </div>
+  </div>
+  <section id="create-review">
     <% if (user) { %>
+      <h2>leave a review!</h2>
       <form action="/recipes/<%= recipe._id %>/reviews" method="POST">
-        <label for="content-textarea">Review:</label>
-        <textarea name="content" id="content-textarea"></textarea>
-        <label for="rating-select"></label>
-        <select name="rating" id="rating-select">
-          <option value="5" selected>5</option>
-          <option value="4">4</option>
-          <option value="3">3</option>
-          <option value="2">2</option>
-          <option value="1">1</option>
-        </select>
-        <button type="submit">Submit Review</button>
+        <textarea name="content" id="content-textarea" placeholder="Comment..."></textarea>
+        <div>
+          <label for="rating-select"></label>
+          <select name="rating" id="rating-select">
+            <option value="5" selected>5</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+          </select>
+          <button type="submit" id="review-submit-btn">Submit Review</button>
+        </div>
       </form>
-    <% } %> 
+    <% } else { %>
+      <h2>Sign in to leave a review!</h2>
+    <% } %>  
   </section>
-  <section>
+  <section id="reviews">
     <% if (recipe.reviews.length) { %>
+      <h3>See what people are saying...</h3>
       <ul>
         <% recipe.reviews.forEach(review => { %>
           <li>
@@ -61,7 +87,9 @@
           </li>
         <% }) %>
       </ul>
-    <% } %> 
+    <% } else { %>
+      <h3>Be the first to leave a review!</h3>
+    <% } %>  
   </section>
 </main>
 

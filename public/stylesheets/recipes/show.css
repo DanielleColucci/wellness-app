@@ -1,0 +1,172 @@
+h1 {
+  color: white;
+  background-color: #67CFD3;
+  width: 100%;
+  min-height: 100px;
+  padding: 25px;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: underline;
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
+#recipe {
+  width: 90%;
+  max-width: 900px;
+  min-height: 500px;
+  background-color: #223843;
+  color: white;
+}
+
+#recipe-header {
+  margin: 8px 32px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#header-left > div:last-child {
+  font-size: 16px;
+}
+
+#header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#header-right > p {
+  margin: 0;
+}
+
+img {
+  height: 24px;
+}
+
+#header-right > section {
+  display: flex;
+  gap: 4px;
+}
+
+#header-right > section > a, form {
+  background-color: white;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#header-right > section > form > button {
+  color: #223843;
+  font-size: 16px;
+  background: none;
+  vertical-align: middle;
+  border: none;
+  padding: 1px 8px;
+}
+
+#header-right > section > a {
+  padding: 1px 8px;
+  color: #223843;
+  text-align: center;
+}
+
+#header-right > section > a:visited {
+  color: #223843;
+}
+
+#header-right > section > *:active {
+  background-color: #D88373;
+  border: 1px solid white;
+  color: white;
+}
+
+#header-right > section > a:active,
+#header-right > section > * > button:active {
+  color: white;
+  padding: 0px 7px;
+}
+
+#ingredients, #instructions  {
+  margin: 0 32px;
+}
+
+#instructions > p:first-child, #ingredients > p:first-child {
+  font-size: 24px;
+  text-decoration: underline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#ingredients > ul, p:last-child {
+  font-size: 16px;
+  font-size: 14px;
+}
+
+#ingredients > ul {
+  list-style-type: circle;
+}
+
+#instructions > p:last-child {
+  font-size: 16px;
+  font-size: 14px;
+  white-space: pre-wrap;
+  margin: 14px 40px;
+}
+
+#create-review {
+  background-color: #EF5D60;
+  color: white;
+  position: relative;
+  top: 24px;
+  height: 200px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+#create-review > h2 {
+  text-align: right;
+}
+
+#create-review > form {
+  background: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-right: 16px;
+}
+
+#content-textarea {
+  height: 150px;
+  width: 300px;
+  resize: none;
+  border: 1px solid #c3c3c3;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+#rating-select, #review-submit-btn {
+  background-color: white;
+  color: #585858;
+  border: 1px solid #c3c3c3;
+  border-radius: 5px;
+  min-height: 24px;
+  padding: 0 8px;
+}
+
+#review-submit-btn:active {
+  color: white;
+  background-color: #7d7d7d;
+}
+
+#reviews {
+  position: relative;
+  top: 24px;
+}
+
