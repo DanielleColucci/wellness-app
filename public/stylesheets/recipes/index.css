@@ -32,7 +32,7 @@
   position: relative;
   top: -100px;
   background-color: #d6daf5;
-  height: 100vh;
+  min-height: 100vh;
   width: 90%;
   max-width: 900px;
   padding: 20px 50px;
@@ -54,8 +54,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 250px;
+  min-height: 250px;
   width: 300px;
+  overflow-wrap: break-word;
 }
 
 .card-title {
