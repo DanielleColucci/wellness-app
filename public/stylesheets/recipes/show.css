@@ -106,6 +106,10 @@ img {
   list-style-type: circle;
 }
 
+#ingredients > p:last-child {
+  margin: 14px 40px;
+}
+
 #instructions > p:last-child {
   font-size: 16px;
   font-size: 14px;
