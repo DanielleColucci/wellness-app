@@ -10,31 +10,17 @@
     </section>
   </div>
   <section id="content">
-    <table>
-      <thead>
-        <tr>
-          <th>Recipe Name</th>
-          <th>Meal</th>
-          <th>User</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% recipes.forEach(recipe => { %>
-          <tr>
-            <td><%= recipe.name %></td>
-            <td><%= recipe.meal %></td>
-            <td>
-              <img src="<%= recipe.owner.avatar %>" alt="<%= recipe.owner.name %>'s avatar">
-              <%= recipe.owner.name %>
-            </td>
-            <td>
-              <a href="/recipes/<%= recipe._id %>">Details</a>
-            </td>
-          </tr>
-        <% }) %>
-      </tbody>
-    </table>
+    <% recipes.forEach(recipe => { %>
+      <div class="card">
+        <div class="card-title">
+          <h2><%= recipe.name %></h2>
+          <h3><%= recipe.owner.name %></h3>
+        </div>
+        <div class="details-button">
+          <a href="/recipes/<%= recipe._id %>">Details→	</a>
+        </div>
+      </div>
+    <% }) %>
   </section>
 </main>
 
