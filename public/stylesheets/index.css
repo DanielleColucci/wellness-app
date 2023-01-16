@@ -1,0 +1,35 @@
+h1 {
+  background-color: #67CFD3;
+  color: white;
+  width: 100%;
+  padding: 50px;
+  margin: 10px 0 0 0;
+  text-align: center;
+}
+
+.picture-box {
+  display: flex; 
+  justify-content: center;
+}
+
+.picture-box > img {
+  width: 33%; 
+  max-width: 400px;
+  margin-bottom: 24px;;
+}
+
+.nav-buttons > a {
+  font-size: 24px;
+  background-color: #EF5D60;
+  color: white;
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin: 0 8px;
+}
+
+.nav-buttons > a:hover {
+  background-color: white;
+  border: 2px solid #D88373;
+  padding: 6px 14px;
+  color: #D88373;
+}
