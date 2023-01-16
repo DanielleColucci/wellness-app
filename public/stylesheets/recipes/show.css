@@ -149,6 +149,7 @@ img {
   border-radius: 8px;
   padding: 4px 8px;
   font-family: 'Poppins', sans-serif;
+  outline: none;
 }
 
 #rating-select, #review-submit-btn {
@@ -168,5 +169,71 @@ img {
 #reviews {
   position: relative;
   top: 24px;
+  width: 90%;
+  min-height: 300px;
+  background-color: #223843;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+#reviews > ul { 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  width: 80%;
+  padding: 0;
+  margin-bottom: 200px;
+}
+
+#reviews > ul > li {
+  display: flex;
+  width: 100%;
+  min-height: 170px;
+}
+
+.review-left {
+  background-color: #D88373;
+  color: white;
+  border-right: 4px solid #223843;
+  padding: 16px;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.review-info > p:first-child, p:nth-child(2) {
+  margin: 0;
+  font-size: 14px;
+}
+
+.review-left > p {
+  font-size: 40px;
+  margin: 0;
+}
+
+.review-left > div > form {
+  background: none;
+}
+
+.review-left > div > form > button {
+  font-size: 12px;
+  border: none;
+  border-radius: 2px;
+}
+
+.review-left > div > form > button:active {
+  background-color: #c3c3c3;
+  color: white;
+}
+
+.review-right {
+  background-color: white;
+  color: #223843;
+  padding: 8px 16px;
+  width: 75%;
+}
