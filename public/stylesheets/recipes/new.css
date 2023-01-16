@@ -1,0 +1,12 @@
+main {
+  background-color: #d6daf5;
+  margin: 0 48px;
+  height: 100vh;
+  justify-content: flex-start;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(r, minmax(auto, 352px));
+  grid-gap: 16px;
+}

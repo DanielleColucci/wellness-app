@@ -21,7 +21,7 @@ body {
 }
 
 nav {
-  background-color: #4e5897;
+  background-color: #D6DAF5;
   display: flex;
   align-items: center;
   padding: 10px;
@@ -38,35 +38,39 @@ nav > div {
 }
 
 #nav-links > a {
-  color: white;
+  color: #223843;
   padding: 8px;
 }
 
 #nav-links > a:visited {
-  color: white;
+  color: #223843;
 }
 
 #nav-links > a:hover {
-  background-color: white;
-  color: #3b4274;
+  background-color: #223843;
+  color: white;
   border-radius: 5px;
   border: 1px solid #c3c3c3;
 }
 
 #logout-link {
-  background-color: white;
+  background-color: #223843;
   border-radius: 5px;
   border: 1px solid #c3c3c3;
   padding: 4px 8px;
 }
 
+#logout-link:hover, #logout-link > button:hover {
+  background-color: white;
+  color: #223843;
+}
+
 #logout-link > button {
-  color: #3b4274;
+  color: white;
   background: none;
   border: none;
   font-size: 16px;
 }
-
 
 main {
   display: flex;

@@ -1,8 +1,43 @@
-main {
+#header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#header > img {
+  position: relative;
+  top: 100; 
+  left: 0;
+  width: 100%;
+  max-width: 1000px;
+}
+
+#title {
+  position: absolute;
+  top: 64px;
+  left: auto;
+  margin-right: auto;
+  width: 75%;
+  max-width: 750px;
+  height: 150px;
+  font-size: 48px;
+  background-color: #67CFD3;
+  color: white;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+#content {
+  position: relative;
+  top: -100px;
   background-color: #d6daf5;
-  margin: 0 48px;
   height: 100vh;
-  justify-content: flex-start;
+  width: 90%;
+  max-width: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 a {
@@ -24,7 +59,7 @@ tr {
   vertical-align: middle;
 }
 
-img {
+td > img {
   height: 32px;
   vertical-align: middle;
 }

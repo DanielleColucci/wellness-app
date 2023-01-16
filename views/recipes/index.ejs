@@ -3,32 +3,39 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1><%= title %></h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Recipe Name</th>
-        <th>Meal</th>
-        <th>User</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% recipes.forEach(recipe => { %>
+  <div id="header">
+    <img src="/assets/header-photo.jpeg" alt="photo of dinner table">
+    <section id="title">
+      <h1>Recipes</h1>
+    </section>
+  </div>
+  <section id="content">
+    <table>
+      <thead>
         <tr>
-          <td><%= recipe.name %></td>
-          <td><%= recipe.meal %></td>
-          <td>
-            <img src="<%= recipe.owner.avatar %>" alt="<%= recipe.owner.name %>'s avatar">
-            <%= recipe.owner.name %>
-          </td>
-          <td>
-            <a href="/recipes/<%= recipe._id %>">Details</a>
-          </td>
+          <th>Recipe Name</th>
+          <th>Meal</th>
+          <th>User</th>
+          <th></th>
         </tr>
-      <% }) %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% recipes.forEach(recipe => { %>
+          <tr>
+            <td><%= recipe.name %></td>
+            <td><%= recipe.meal %></td>
+            <td>
+              <img src="<%= recipe.owner.avatar %>" alt="<%= recipe.owner.name %>'s avatar">
+              <%= recipe.owner.name %>
+            </td>
+            <td>
+              <a href="/recipes/<%= recipe._id %>">Details</a>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </section>
 </main>
 
 <%- include('../partials/footer') %>
