@@ -39,7 +39,7 @@ nav > div {
 
 #nav-links > a {
   color: #223843;
-  padding: 8px;
+  padding: 4px 8px;
 }
 
 #nav-links > a:visited {
@@ -51,6 +51,7 @@ nav > div {
   color: white;
   border-radius: 5px;
   border: 1px solid #c3c3c3;
+  padding: 3px 7px;
 }
 
 #logout-link {
