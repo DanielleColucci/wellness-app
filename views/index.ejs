@@ -3,8 +3,13 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>welcome, <%= user ? user.profile.name : "friend" %></h1>
-  <div class="picture-box">
+  <div id="login-msg">
+    <h1>welcome, <%= user ? user.profile.name : "friend" %></h1>
+    <% if(!user) { %>
+      <h3>sign in to create a recipe!</h3>
+    <% } %> 
+  </div>
+    <div class="picture-box">
     <img src="/assets/fruit-bowl.jpeg" alt="bowl of fruits">
     <img src="/assets/grain-bowl.jpeg" alt="veggies over a bowl of grain">
     <img src="/assets/toast.jpeg" alt="peanut butter-banana and avocado toasts">
