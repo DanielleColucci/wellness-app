@@ -4,7 +4,7 @@ main {
   justify-content: flex-start;
 }
 
-form {
+main > form {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -142,4 +142,94 @@ input, textarea {
   resize: none;
   border-radius: 8px;
   margin-bottom: 48px;
+}
+
+#add-ingredients {
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#add-ing-header {
+  position: relative;
+  top: 24px;
+  width: 100%;
+  height: 200px;
+  background-color: #EF5D60;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#add-ing-header > h2 {
+  margin: 0;
+  text-align: center;
+}
+
+#add-ing-header > p {
+  margin: 14px 0 0 0;
+  text-align: center;
+}
+
+#ingredient-options {
+  position: relative;
+  top: 24px;
+  width: 90%;
+  max-width: 900px;
+  min-height: 300px;
+  background-color: #223843;
+  color: white;
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, 300px);
+  gap: 5%;
+  justify-items: start;
+  align-items: start;
+  justify-content: start;
+}
+
+.food-group {
+  background-color: white;
+  color: #EF5D60;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  padding: 4px 8px;
+  margin: 20px 40px;
+  width: fit-content;
+  text-decoration: underline;
+}
+
+#ingredient-options > * > div > ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 14px 0 14px 60px;
+}
+
+#ingredient-options > * > div > ul > li > form {
+  display: flex;
+  align-items: center;
+}
+
+#ingredient-options > * > div > ul > li > form > p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.add {
+  background: none;
+  color: white;
+  border: none;
+  padding: 1px 8px;
+  margin: 4px 8px 4px 0;
+}
+
+.add:active {
+  background-color: #D88373;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 0 7px;
 }
