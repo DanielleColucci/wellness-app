@@ -36,6 +36,7 @@ h1 {
 #quote-div {
   width: 50%;
   color: white;
+  text-align: right;
 }
 
 #quote-div > p:last-child {
