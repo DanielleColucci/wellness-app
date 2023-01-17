@@ -187,7 +187,6 @@ input, textarea {
   max-width: 900px;
   min-height: 300px;
   display: flex;
-  justify-content: center;
 }
 
 #ingredient-options {
@@ -195,7 +194,17 @@ input, textarea {
   width: 100%;
   grid-template-columns: repeat(auto-fill, 300px);
   gap: 0px;
-  justify-items: center;
+  justify-content: center;
+}
+
+#ingredient-options > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#ingredient-options > div:last-child {
+  margin-bottom: 24px;
 }
 
 .food-group {
@@ -205,14 +214,14 @@ input, textarea {
   border-radius: 5px;
   padding: 4px 8px;
   margin: 20px 40px;
-  width: fit-content;
+  width: 136px;
   text-decoration: underline;
 }
 
 #ingredient-options > * > div > ul {
   list-style-type: none;
   padding: 0;
-  margin: 14px 0 14px 60px;
+  margin: 0 0 0 60px;
 }
 
 #ingredient-options > * > div > ul > li > form {
