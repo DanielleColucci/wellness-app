@@ -46,6 +46,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 200px;
+  padding: 0 20px;
 }
 
 .card { 
@@ -64,6 +65,7 @@
 
 .card-title {
   background-color: #EF5D60;
+  border: 1px solid white;
   padding: 0 16px;
   width: 80%;
   box-shadow: 5px 5px white;

@@ -1,0 +1,152 @@
+#header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+h1 {
+  background-color: #67CFD3;
+  color: white;
+  text-decoration: underline;
+  width: 100%;
+  height: 100px;
+  text-align: left;
+  padding: 24px 40px;
+  margin-bottom: 0;
+}
+
+#sub-header {
+  background-color: #223843;
+  min-height: 200px; 
+  width: 90%; 
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#sub-header > img {
+  height: 150px;
+  border: 1px solid white;
+  box-shadow: 10px 10px white;
+}
+
+#quote-div {
+  width: 50%;
+  color: white;
+}
+
+#quote-div > p:last-child {
+  font-size: 14px;
+}
+
+#recipes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#recipes > h2 {
+  width: 100%;
+  background-color: #EF5D60;
+  color: white;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+#no-recipe-msg, #card-container {
+  background-color: #223843;
+  color: white;
+  width: 90%;
+  max-width: 900px;
+  min-height: 250px;
+  margin: 0;
+}
+
+#no-recipe-msg {
+  text-align: center;
+  padding: 48px;
+  font-size: 20px;
+}
+
+#card-container {
+  padding: 24px 20px 200px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  gap: 5%;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.card { 
+  background-color: #D6DAF5;
+  color: white;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 200px;
+  width: 300px;
+  overflow-wrap: break-word;
+  box-shadow: 5px 5px white;
+}
+
+.card-top {
+  background-color: white;
+  color: #223843;
+  font-size: 24px;
+  width: 80%;
+  text-align: center;
+  border: 1px solid #D88373;
+  box-shadow: 5px 5px #D88373;
+  padding: 8px 16px;
+}
+
+.card-middle {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-middle > a > button,
+.card-middle > form > button {
+  width: 80px;
+  font-size: 14px;
+  background-color: white;
+  color: #223843;
+  border: 1px solid #223843;
+  border-radius: 5px;
+}
+
+.card-middle > a > button:active,
+.card-middle > form > button:active {
+  background-color: #D88373;
+  color: white;
+  border: 1px solid white;
+}
+
+.card-middle > a > button:hover,
+.card-middle > form > button:hover, 
+.card-bottom:hover {
+  text-decoration: underline;
+}
+
+.card-bottom {
+  margin: 4px 16px;
+  padding-left: 16px;
+  width: 80%;
+  background-color: white;
+  color: #223843;
+  border: 1px solid #D88373;
+  text-align: left;
+  box-shadow: 5px 5px #D88373;
+}
