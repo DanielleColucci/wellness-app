@@ -144,15 +144,15 @@ img {
 #create-review > form {
   background: none;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: flex-end;
   flex-wrap: wrap;
   gap: 16px;
   margin-right: 16px;
 }
 
 #content-textarea {
-  height: 150px;
+  height: 100px;
   width: 300px;
   resize: none;
   border: 1px solid #c3c3c3;
