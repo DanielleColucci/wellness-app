@@ -23,7 +23,7 @@ router.post('/', isLoggedIn, recipesCtrl.create)
 router.post('/:id/reviews', isLoggedIn, recipesCtrl.createReview)
 
 // POST /recipes/:id/ingredients/:ingredientId
-router.post('/:id/ingredients/:ingredientId', recipesCtrl.addIngredient)
+router.post('/:id/ingredients/:ingredientId', isLoggedIn, recipesCtrl.addIngredient)
 
 // PUT /recipes/:id
 router.put('/:id', isLoggedIn, recipesCtrl.update)
@@ -32,7 +32,7 @@ router.put('/:id', isLoggedIn, recipesCtrl.update)
 router.delete('/:id', isLoggedIn, recipesCtrl.delete)
 
 // DELETE /recipes/:id/reviews/:reviewId
-router.delete('/:id/reviews/:reviewId', recipesCtrl.deleteReview)
+router.delete('/:id/reviews/:reviewId', isLoggedIn, recipesCtrl.deleteReview)
 
 export {
   router

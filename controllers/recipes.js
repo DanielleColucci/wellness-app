@@ -157,15 +157,17 @@ function addIngredient(req, res) {
 function deleteReview(req, res) {
   Recipe.findById(req.params.id) 
   .then(recipe => {
-    recipe.reviews.forEach((review, idx) => {
-      if (review._id.equals(req.params.reviewId)) {
-        recipe.reviews.splice(idx, 1)
-        recipe.save()
-        .then(() => {
-          res.redirect(`/recipes/${recipe._id}`)
-        })
-      }
-    })
+    if (recipe.owner.equals(req.user.profile._id)) {
+      recipe.reviews.forEach((review, idx) => {
+        if (review._id.equals(req.params.reviewId)) {
+          recipe.reviews.splice(idx, 1)
+          recipe.save()
+          .then(() => {
+            res.redirect(`/recipes/${recipe._id}`)
+          })
+        }
+      })
+    }
   })
   .catch(err => {
     console.log(err)
