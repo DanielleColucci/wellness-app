@@ -45,124 +45,126 @@
       <p>Click the check mark to add an ingredient to the recipe.</p>
       <p>Make sure to hit the update button above to save all changes!</p>
     </div>
-    <div id="ingredient-options">
-      <div id="vegetables">
-        <div class="food-group">Vegetables:</div>
-        <div>
-          <ul>
-            <% ingredients.forEach(ingredient => { %>
-              <% if (ingredient.foodGroup === 'Vegetable') { %>
-                <li>
-                  <form action="/recipes/<%= recipe._id %>/ingredients/<%= ingredient._id %>" method="POST">
-                    <button class="add" type="submit">✓</button>
-                    <p><%= ingredient.name %></p>
-                  </form>
-                </li>
-              <% } %> 
-            <% }) %>
-          </ul>
+    <div id="grid-container">
+      <div id="ingredient-options">
+        <div id="vegetables">
+          <div class="food-group">Vegetables:</div>
+          <div>
+            <ul>
+              <% ingredients.forEach(ingredient => { %>
+                <% if (ingredient.foodGroup === 'Vegetable') { %>
+                  <li>
+                    <form action="/recipes/<%= recipe._id %>/ingredients/<%= ingredient._id %>" method="POST">
+                      <button class="add" type="submit">✓</button>
+                      <p><%= ingredient.name %></p>
+                    </form>
+                  </li>
+                <% } %> 
+              <% }) %>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div id="meat-fish">
-        <div class="food-group">Meats/Fish:</div>
-        <div>
-          <ul>
-            <% ingredients.forEach(ingredient => { %>
-              <% if (ingredient.foodGroup === 'Meat/Fish') { %>
-                <li>
-                  <form action="/recipes/<%= recipe._id %>/ingredients/<%= ingredient._id %>" method="POST">
-                    <button class="add" type="submit">✓</button>
-                    <p><%= ingredient.name %></p>
-                  </form>
-                </li>
-              <% } %> 
-            <% }) %>
-          </ul>
+        <div id="meat-fish">
+          <div class="food-group">Meats/Fish:</div>
+          <div>
+            <ul>
+              <% ingredients.forEach(ingredient => { %>
+                <% if (ingredient.foodGroup === 'Meat/Fish') { %>
+                  <li>
+                    <form action="/recipes/<%= recipe._id %>/ingredients/<%= ingredient._id %>" method="POST">
+                      <button class="add" type="submit">✓</button>
+                      <p><%= ingredient.name %></p>
+                    </form>
+                  </li>
+                <% } %> 
+              <% }) %>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div id="grains">
-        <div class="food-group">Grains:</div>
-        <div>
-          <ul>
-            <% ingredients.forEach(ingredient => { %>
-              <% if (ingredient.foodGroup === 'Grain') { %>
-                <li>
-                  <form action="/recipes/<%= recipe._id %>/ingredients/<%= ingredient._id %>" method="POST">
-                    <button class="add" type="submit">✓</button>
-                    <p><%= ingredient.name %></p>
-                  </form>
-                </li>
-              <% } %> 
-            <% }) %>
-          </ul>
+        <div id="grains">
+          <div class="food-group">Grains:</div>
+          <div>
+            <ul>
+              <% ingredients.forEach(ingredient => { %>
+                <% if (ingredient.foodGroup === 'Grain') { %>
+                  <li>
+                    <form action="/recipes/<%= recipe._id %>/ingredients/<%= ingredient._id %>" method="POST">
+                      <button class="add" type="submit">✓</button>
+                      <p><%= ingredient.name %></p>
+                    </form>
+                  </li>
+                <% } %> 
+              <% }) %>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div id="dairy">
-        <div class="food-group">Dairy:</div>
-        <div>
-          <ul>
-            <% ingredients.forEach(ingredient => { %>
-              <% if (ingredient.foodGroup === 'Dairy') { %>
-                <li>
-                  <form action="/recipes/<%= recipe._id %>/ingredients/<%= ingredient._id %>" method="POST">
-                    <button class="add" type="submit">✓</button>
-                    <p><%= ingredient.name %></p>
-                  </form>
-                </li>
-              <% } %> 
-            <% }) %>
-          </ul>
+        <div id="dairy">
+          <div class="food-group">Dairy:</div>
+          <div>
+            <ul>
+              <% ingredients.forEach(ingredient => { %>
+                <% if (ingredient.foodGroup === 'Dairy') { %>
+                  <li>
+                    <form action="/recipes/<%= recipe._id %>/ingredients/<%= ingredient._id %>" method="POST">
+                      <button class="add" type="submit">✓</button>
+                      <p><%= ingredient.name %></p>
+                    </form>
+                  </li>
+                <% } %> 
+              <% }) %>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div id="fats-oils">
-        <div class="food-group">Fats/Oils:</div>
-        <div>
-          <ul>
-            <% ingredients.forEach(ingredient => { %>
-              <% if (ingredient.foodGroup === 'Fat/Oil') { %>
-                <li>
-                  <form action="/recipes/<%= recipe._id %>/ingredients/<%= ingredient._id %>" method="POST">
-                    <button class="add" type="submit">✓</button>
-                    <p><%= ingredient.name %></p>
-                  </form>
-                </li>
-              <% } %> 
-            <% }) %>
-          </ul>
+        <div id="fats-oils">
+          <div class="food-group">Fats/Oils:</div>
+          <div>
+            <ul>
+              <% ingredients.forEach(ingredient => { %>
+                <% if (ingredient.foodGroup === 'Fat/Oil') { %>
+                  <li>
+                    <form action="/recipes/<%= recipe._id %>/ingredients/<%= ingredient._id %>" method="POST">
+                      <button class="add" type="submit">✓</button>
+                      <p><%= ingredient.name %></p>
+                    </form>
+                  </li>
+                <% } %> 
+              <% }) %>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div id="herbs-spices">
-        <div class="food-group">Herbs/Spices:</div>
-        <div>
-          <ul>
-            <% ingredients.forEach(ingredient => { %>
-              <% if (ingredient.foodGroup === 'Herb/Spice') { %>
-                <li>
-                  <form action="/recipes/<%= recipe._id %>/ingredients/<%= ingredient._id %>" method="POST">
-                    <button class="add" type="submit">✓</button>
-                    <p><%= ingredient.name %></p>
-                  </form>
-                </li>
-              <% } %> 
-            <% }) %>
-          </ul>
+        <div id="herbs-spices">
+          <div class="food-group">Herbs/Spices:</div>
+          <div>
+            <ul>
+              <% ingredients.forEach(ingredient => { %>
+                <% if (ingredient.foodGroup === 'Herb/Spice') { %>
+                  <li>
+                    <form action="/recipes/<%= recipe._id %>/ingredients/<%= ingredient._id %>" method="POST">
+                      <button class="add" type="submit">✓</button>
+                      <p><%= ingredient.name %></p>
+                    </form>
+                  </li>
+                <% } %> 
+              <% }) %>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div id="other">
-        <div class="food-group">Other:</div>
-        <div>
-          <ul>
-            <% ingredients.forEach(ingredient => { %>
-              <% if (ingredient.foodGroup === 'Other') { %>
-                <li>
-                  <form action="/recipes/<%= recipe._id %>/ingredients/<%= ingredient._id %>" method="POST">
-                    <button class="add" type="submit">✓</button>
-                    <p><%= ingredient.name %></p>
-                  </form>
-                </li>
-              <% } %> 
-            <% }) %>
-          </ul>
+        <div id="other">
+          <div class="food-group">Other:</div>
+          <div>
+            <ul>
+              <% ingredients.forEach(ingredient => { %>
+                <% if (ingredient.foodGroup === 'Other') { %>
+                  <li>
+                    <form action="/recipes/<%= recipe._id %>/ingredients/<%= ingredient._id %>" method="POST">
+                      <button class="add" type="submit">✓</button>
+                      <p><%= ingredient.name %></p>
+                    </form>
+                  </li>
+                <% } %> 
+              <% }) %>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

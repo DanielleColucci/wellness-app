@@ -175,17 +175,23 @@ input, textarea {
   text-align: center;
 }
 
-#ingredient-options {
-  position: relative;
-  top: 24px;
+#grid-container {
+  background-color: #223843;
+  color: white;
+  width: 90%;
+  margin-top: 24px;
   width: 90%;
   max-width: 900px;
   min-height: 300px;
-  background-color: #223843;
-  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+#ingredient-options {
   display: grid; 
+  width: 100%;
   grid-template-columns: repeat(auto-fill, 300px);
-  gap: 5%;
+  gap: 0px;
   justify-items: start;
   align-items: start;
   justify-content: start;
@@ -232,4 +238,9 @@ input, textarea {
   border: 1px solid white;
   border-radius: 5px;
   padding: 0 7px;
+}
+
+#create-ingredients {
+  position: relative;
+  top: 48px;
 }
