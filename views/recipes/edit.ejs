@@ -35,6 +35,7 @@
           <% }) %>
         </ul>
         <label for="instructions-textarea">Preparation:</label>
+        <br>
         <textarea name="instructions" id="instructions-textarea" autocomplete="off"><%= recipe.instructions %></textarea>
       </div>
     </div>
@@ -189,7 +190,7 @@
             <option value="Herb/Spice">Herb/Spice</option>
             <option value="Other">Other</option>
           </select>
-          <button type="submit">Create</button>
+          <button id="new-ing-button" type="submit">Create</button>
         </div>
       </form >
     </div>

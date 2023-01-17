@@ -94,6 +94,7 @@ input, textarea {
 #recipe-header > button {
   font-size: 16px;
   background-color: white;
+  color: #223843;
   border: 1px solid #b1b1b1;
   border-radius: 5px;
   width: fit-content;
@@ -303,4 +304,19 @@ input, textarea {
 #ing-name-input::placeholder {
   color: #7f929c;
   text-align: center;
+}
+
+#new-ing-button {
+  font-size: 16px;
+  background-color: white;
+  color: #223843;
+  border: 1px solid #b1b1b1;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+#new-ing-button:active {
+  background-color: #D88373;
+  border: 1px solid white;
+  color: white
 }
