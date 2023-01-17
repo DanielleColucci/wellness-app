@@ -54,6 +54,13 @@ nav > div {
   padding: 3px 7px;
 }
 
+#nav-links > a:first-child:hover {
+  background: none;
+  color: #223843;
+  border: none;
+  padding: 4px 8px;
+}
+
 #logout-link {
   background-color: #223843;
   border-radius: 5px;
