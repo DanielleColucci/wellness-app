@@ -170,24 +170,29 @@
     </div>
   </section>
   <section id="create-ingredients">
-    <h3>Need to create new ingredients for your recipe? Create one Below!</h3>
-    <p>Please ensure that the ingredient you are looking for does not already exist. After adding, make sure to click the ingredient above to add it to your recipe.</p>
-    <form action="/ingredients/<%= recipe._id %>" method="POST">
-      <label for="ing-name-input">Name:</label>
-      <input type="text" name="name" id="ing-name-input" required autocomplete="off">
-      <label for="food-group-select">Food Group:</label>
-      <select name="foodGroup" id="food-group-select" required>
-        <option value="Vegetable">Vegetable</option>
-        <option value="Meat/Fish">Meat/Fish</option>
-        <option value="Grain">Grain</option>
-        <option value="Dairy">Dairy</option>
-        <option value="Fat/Oil">Fat/Oil</option>
-        <option value="Fruit">Fruit</option>
-        <option value="Herb/Spice">Herb/Spice</option>
-        <option value="Other">Other</option>
-      </select>
-      <button type="submit">Create</button>
-    </form >
+    <div id="create-ing-header">
+      <h3>Need to create new ingredients for your recipe? <br>Create one Below!</h3>
+      <p>Please ensure that the ingredient you are looking for does not already exist. After adding, make sure to click the ingredient above to add it to your recipe.</p>
+    </div>
+    <div id="create-ing-form">
+      <form action="/ingredients/<%= recipe._id %>" method="POST">
+        <input type="text" name="name" id="ing-name-input" required autocomplete="off" placeholder="ingredient name*">
+        <div id="create-form-bottom">
+          <label for="food-group-select">Food Group:</label>
+          <select name="foodGroup" id="food-group-select" required>
+            <option value="Vegetable">Vegetable</option>
+            <option value="Meat/Fish">Meat/Fish</option>
+            <option value="Grain">Grain</option>
+            <option value="Dairy">Dairy</option>
+            <option value="Fat/Oil">Fat/Oil</option>
+            <option value="Fruit">Fruit</option>
+            <option value="Herb/Spice">Herb/Spice</option>
+            <option value="Other">Other</option>
+          </select>
+          <button type="submit">Create</button>
+        </div>
+      </form >
+    </div>
   </section>
 </main>
 

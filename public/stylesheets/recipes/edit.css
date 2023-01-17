@@ -192,14 +192,12 @@ input, textarea {
   width: 100%;
   grid-template-columns: repeat(auto-fill, 300px);
   gap: 0px;
-  justify-items: start;
-  align-items: start;
-  justify-content: start;
+  justify-items: center;
 }
 
 .food-group {
   background-color: white;
-  color: #EF5D60;
+  color: #223843;
   border: 1px solid #bdbdbd;
   border-radius: 5px;
   padding: 4px 8px;
@@ -243,4 +241,64 @@ input, textarea {
 #create-ingredients {
   position: relative;
   top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+#create-ing-header {
+  background-color: #67CFD3;
+  color: white;
+  padding: 24px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#create-ing-header > * {
+  max-width: 80%;
+}
+
+#create-ing-header > h3 {
+  text-align: center;
+  margin: 0;
+}
+
+#create-ing-header > p {
+  margin: 14px;
+}
+
+#create-ing-form {
+  background-color: #223843;
+  color: white;
+  width: 90%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#create-ing-form > form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+#food-group-select, #ing-name-input {
+  font-size: 16px;
+  color: #223843;
+  background-color: white;
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid #b1b1b1;
+  border-radius: 5px;
+  padding: 0 8px;
+}
+
+#ing-name-input::placeholder {
+  color: #7f929c;
+  text-align: center;
 }
