@@ -134,6 +134,7 @@ input, textarea {
 #recipe-content > ul {
   margin: 14px 40px;
   font-size: 14px;
+  list-style-type: circle;
 }
 
 #instructions-textarea {
