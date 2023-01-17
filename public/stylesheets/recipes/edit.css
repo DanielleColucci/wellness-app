@@ -82,6 +82,8 @@ input, textarea {
 
 #time-input {
   padding: 0 8px;
+  width: 56px;
+  text-align: center;
 }
 
 #time-input::-webkit-outer-spin-button,
