@@ -109,7 +109,7 @@ input, textarea {
   color: white;
   width: 90%;
   max-width: 1000px;
-  height: 500px;
+  min-height: 500px;
 }
 
 #recipe-content > p:first-child,
@@ -123,9 +123,13 @@ input, textarea {
   margin-top: 16px;
 }
 
-#instructions-textarea,
-#recipe-content > p:nth-child(2) {
+#instructions-textarea {
   margin: 14px 72px;
+  font-size: 14px;
+}
+
+#recipe-content > ul {
+  margin: 14px 40px;
   font-size: 14px;
 }
 
@@ -137,4 +141,5 @@ input, textarea {
   padding: 4px 8px;
   resize: none;
   border-radius: 8px;
+  margin-bottom: 48px;
 }

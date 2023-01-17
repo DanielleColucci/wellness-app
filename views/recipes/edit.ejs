@@ -1,24 +1,43 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/recipes/edit.css">
 <%- include('../partials/nav') %>
 
 <main>
-  <h1><%= title %></h1>
   <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
-    <label for="name-input">Name:</label>
-    <input type="text" name="name" id="name-input" required autocomplete="off" value="<%= recipe.name %>">
-    <label for="meal-select">Meal:</label>
-    <select name="meal" id="meal-select">
-      <option value="<%= recipe.meal %>"><%= recipe.meal %></option>
-      <option value="Breakfast">Breakfast</option>
-      <option value="Lunch">Lunch</option>
-      <option value="Dinner">Dinner</option>
-      <option value="Other">Other</option>
-    </select>
-    <label for="time-input">Estimated Time (in minutes):</label>
-    <input type="number" name="estTime" id="time-input" value="<%= recipe.estTime %>">
-    <label for="instructions-textarea">Instructions:</label>
-    <textarea name="instructions" id="instructions-textarea" autocomplete="off"><%= recipe.instructions %></textarea>
-    <button type="submit">Update Recipe</button>
+    <div id="name-div">
+      <input type="text" name="name" id="name-input" required autocomplete="off" value="<%= recipe.name %>" placeholder="recipe name*">
+    </div>
+    <div id="recipe">
+      <div id="recipe-header">
+        <div id="header-left">
+          <div id="meal-select-container">
+            <label for="meal-select">Select Category:</label>
+            <select name="meal" id="meal-select">
+              <option value="<%= recipe.meal %>"><%= recipe.meal %></option>
+              <option value="Breakfast">Breakfast</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div id="time-input-container">
+            <label for="time-input">Estimated Time (in minutes):</label>
+            <input type="number" name="estTime" id="time-input" value="<%= recipe.estTime %>">
+          </div>
+        </div>
+        <button type="submit">Update Recipe</button>
+      </div>
+      <div id="recipe-content">
+        <p>Ingredients:</p>
+        <ul>
+          <% recipe.ingredients.forEach(ingredient => { %>
+            <li><%= ingredient.name %> (<%= ingredient.foodGroup %>)</li>
+          <% }) %>
+        </ul>
+        <label for="instructions-textarea">Preparation:</label>
+        <textarea name="instructions" id="instructions-textarea" autocomplete="off"><%= recipe.instructions %></textarea>
+      </div>
+    </div>
   </form>
   <section>
     <h2>Add ingredients to your recipe!</h2>
@@ -128,7 +147,6 @@
         <% }) %>
       </ul>
     </div>
-    <p>Current Ingredients:</p>
     <ul>
       <% recipe.ingredients.forEach(ingredient => { %>
         <li><%= ingredient.name %> (<%= ingredient.foodGroup %>)</li>
@@ -139,8 +157,8 @@
     <h3>Need to create new ingredients for your recipe? Create one Below!</h3>
     <p>Please ensure that the ingredient you are looking for does not already exist. After adding, make sure to click the ingredient above to add it to your recipe.</p>
     <form action="/ingredients/<%= recipe._id %>" method="POST">
-      <label for="name-input">Name:</label>
-      <input type="text" name="name" id="name-input" required autocomplete="off">
+      <label for="ing-name-input">Name:</label>
+      <input type="text" name="name" id="ing-name-input" required autocomplete="off">
       <label for="food-group-select">Food Group:</label>
       <select name="foodGroup" id="food-group-select" required>
         <option value="Vegetable">Vegetable</option>

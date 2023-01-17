@@ -8,25 +8,25 @@
       <input type="text" name="name" id="name-input" required autocomplete="off" placeholder="recipe name*">
     </div>
     <div id="recipe">
-        <div id="recipe-header">
-          <div id="header-left">
-            <div id="meal-select-container">
-              <label for="meal-select">Select Category:</label>
-              <select name="meal" id="meal-select">
-                option
-                <option value="Breakfast">Breakfast</option>
-                <option value="Lunch">Lunch</option>
-                <option value="Dinner">Dinner</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div id="time-input-container">
-              <label for="time-input">Estimated Time (in minutes):</label>
-              <input type="number" name="estTime" id="time-input">
-            </div>
+      <div id="recipe-header">
+        <div id="header-left">
+          <div id="meal-select-container">
+            <label for="meal-select">Select Category:</label>
+            <select name="meal" id="meal-select">
+              option
+              <option value="Breakfast">Breakfast</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Other">Other</option>
+            </select>
           </div>
-          <button   type="submit">Create Recipe!</button>
+          <div id="time-input-container">
+            <label for="time-input">Estimated Time (in minutes):</label>
+            <input type="number" name="estTime" id="time-input">
+          </div>
         </div>
+        <button   type="submit">Create Recipe!</button>
+      </div>
       <div id="recipe-content">
         <p>Ingredients:</p>
         <p>Add ingredients by editing recipe after creating!</p>
