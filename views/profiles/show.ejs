@@ -39,7 +39,10 @@
         <% }) %>
       </div>
     <% } else { %>
-      <p id="no-recipe-msg">You haven't created any recipes yet. Use the button above to make one!</p>
+      <p id="no-recipe-msg">
+        <%= isSelf ? "You haven't" : "This user hasn't" %> created any recipes yet. 
+        <%= isSelf ? 'Use the button above to make one!' : '' %>
+      </p>
     <% } %> 
   </div>
 </main>
