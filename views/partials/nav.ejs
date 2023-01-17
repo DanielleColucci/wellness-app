@@ -12,6 +12,7 @@
     </div>
     <div id="login-links">
       <% if (user) { %>
+        <a id="my-profile-btn" href="/profiles/<%= user.profile._id %>">your profile</a>
         <a id="logout-link" href="/auth/logout">
           <button type="submit">logout</button>
         </a>
