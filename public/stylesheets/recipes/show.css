@@ -74,15 +74,21 @@ img {
   color: #223843;
 }
 
+#header-right > section > *:hover {
+  text-decoration: underline;
+}
+
+#header-right > section > * > button:hover {
+  text-decoration: underline;
+}
+
 #header-right > section > *:active {
-  background-color: #D88373;
-  border: 1px solid white;
-  color: white;
+  border: 1px solid #D88373;
 }
 
 #header-right > section > a:active,
 #header-right > section > * > button:active {
-  color: white;
+  color: #D88373;
   padding: 0px 7px;
 }
 
@@ -165,9 +171,13 @@ img {
   padding: 0 8px;
 }
 
+#review-submit-btn:hover {
+  text-decoration: underline;
+}
+
 #review-submit-btn:active {
-  color: white;
-  background-color: #7d7d7d;
+  color: #D88373;
+  border-color: #D88373;
 }
 
 #reviews {
@@ -229,12 +239,19 @@ img {
 .review-left > div > form > button {
   font-size: 12px;
   border: none;
-  border-radius: 2px;
+  color: #585858;
+  border: 1px solid #c3c3c3;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.review-left > div > form > button:hover {
+  text-decoration: underline;
 }
 
 .review-left > div > form > button:active {
-  background-color: #c3c3c3;
-  color: white;
+  color: #D88373;
+  border-color: #223843;
 }
 
 .review-right {
