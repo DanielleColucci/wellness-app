@@ -5,7 +5,7 @@
 <main>
   <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
     <div id="name-div">
-      <input type="text" name="name" id="name-input" required autocomplete="off" value="<%= recipe.name %>" placeholder="recipe name*">
+      <input type="text" name="name" id="name-input" required autocomplete="off" autofocus="autofocus" value="<%= recipe.name %>" placeholder="recipe name*">
     </div>
     <div id="recipe">
       <div id="recipe-header">
