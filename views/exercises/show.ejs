@@ -1,0 +1,31 @@
+<%- include('../partials/html-head') %> 
+<%- include('../partials/nav') %> 
+
+<main>
+  <div id="header">
+    <h1><%= exercise.type %></h1>
+    <h2>Posted by <%= exercise.owner.name %></h2>
+  </div>
+  <div id="exercise-content">
+    <div>Exercise Type:</div>
+    <div><%= exercise.type %></div>
+    <div>Duration (in minutes):</div>
+    <div><%= exercise.duration %></div>
+    <div>Date:</div>
+    <div><%= exercise.date.toLocaleDateString() %></div>
+    <div>Additional Comments:</div>
+    <div><%= exercise.comments ? `${exercise.comments}` : 'N/A' %> </div>
+  </div>
+  <% if (exercise.owner.equals(user?.profile._id)) { %>
+    <section>
+      <a href="/exercises/<%= exercise._id %>/edit">
+        Edit Exercise
+      </a>
+      <form action="/exercises/<%= exercise._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete Exercise</button>
+      </form>
+    </section>
+  <% } %>
+</main>
+
+<%- include('../partials/footer') %> 
