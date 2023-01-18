@@ -3,7 +3,7 @@
 <%- include('../partials/nav') %> 
 
 <main>
-  <h1>Editing Exercise from <%= exercise.date.toISOString().slice(0, 10) %></h1>
+  <h1>Editing Exercise from <%= `${exercise.date.toISOString().slice(5, 7)}/${exercise.date.toISOString().slice(8, 10)}/${exercise.date.toISOString().slice(0, 4)}` %></h1>
   <form action="/exercises/<%= exercise._id %>?_method=PUT" method="POST">
     <div id="type">
       <label for="type-select">Exercise Type*:</label>
