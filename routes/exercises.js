@@ -4,6 +4,9 @@ import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
+// GET /exercises
+router.get('/', exercisesCtrl.index)
+
 // GET /exercises/new
 router.get('/new', isLoggedIn, exercisesCtrl.new)
 

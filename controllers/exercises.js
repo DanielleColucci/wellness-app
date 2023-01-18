@@ -27,7 +27,23 @@ function create(req, res) {
   })
 }
 
+function index(req, res) {
+  Exercise.find({})
+  .populate('owner')
+  .then(exercises => {
+    res.render('exercises/index', {
+      exercises,
+      title: 'Exercises'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   newExercise as new,
   create,
+  index,
 }
