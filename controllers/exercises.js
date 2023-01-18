@@ -42,8 +42,24 @@ function index(req, res) {
   })
 }
 
+function show(req, res) {
+  Exercise.findById(req.params.id)
+  .populate('owner')
+  .then(exercise => (
+    res.render('exercises/show', {
+      exercise, 
+      title: 'Exercise Info'
+    })
+  ))
+  .catch(err => {
+    console.log(err)
+    res.redirect('/exercises')
+  })
+}
+
 export {
   newExercise as new,
   create,
   index,
+  show, 
 }

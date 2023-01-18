@@ -10,6 +10,9 @@ router.get('/', exercisesCtrl.index)
 // GET /exercises/new
 router.get('/new', isLoggedIn, exercisesCtrl.new)
 
+// GET /exercises/:id
+router.get('/:id', exercisesCtrl.show)
+
 // POST /exercises
 router.post('/', isLoggedIn, exercisesCtrl.create)
 
