@@ -22,6 +22,9 @@ router.post('/', isLoggedIn, exercisesCtrl.create)
 // PUT /exercises/:id
 router.put('/:id', isLoggedIn, exercisesCtrl.update)
 
+// DELETE /exercises/:id
+router.delete('/:id', isLoggedIn, exercisesCtrl.delete)
+
 export {
   router
 }

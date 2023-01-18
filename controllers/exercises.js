@@ -86,6 +86,33 @@ function update(req, res) {
   })
 }
 
+function deleteExercise(req, res) {
+  Exercise.findById(req.params.id) 
+  .then(exercise => {
+    if (exercise.owner.equals(req.user.profile._id)) {
+      exercise.delete()
+      Profile.findById(req.user.profile._id)
+      .then(profile => {
+        profile.exercises.forEach((exercise, idx) => {
+          if (exercise._id.equals(req.params.id)) {
+            profile.exercises.splice(idx, 1)
+            profile.save()
+            .then(() => {
+              res.redirect(`/profiles/${req.user.profile._id}`)
+            })
+          }
+        })
+      })
+    } else {
+      throw new Error('NOT AUTHORIZED')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/execises')
+  })
+}
+
 export {
   newExercise as new,
   create,
@@ -93,4 +120,5 @@ export {
   show, 
   edit, 
   update,
+  deleteExercise as delete
 }
