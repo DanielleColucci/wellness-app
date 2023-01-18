@@ -23,7 +23,7 @@ h1, h3 {
 .picture-box > img {
   width: 33%; 
   max-width: 400px;
-  margin-bottom: 24px;;
+  margin-bottom: 48px;;
 }
 
 .nav-buttons {
@@ -48,4 +48,21 @@ h1, h3 {
   border: 2px solid #D88373;
   padding: 6px 14px;
   color: #D88373;
+}
+
+#site-info {
+  width: 100%;
+  margin-top: 48px;
+  padding: 36px;
+  background-color: #67CFD3;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#site-info > * {
+  width: 80%;
+  max-width: 900px;
 }

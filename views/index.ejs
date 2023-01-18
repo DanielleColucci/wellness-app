@@ -6,7 +6,7 @@
   <div id="login-msg">
     <h1>welcome, <%= user ? user.profile.name : "friend" %></h1>
     <% if(!user) { %>
-      <h3>sign in to create a recipe!</h3>
+      <h3>sign in to create your own recipes and log your exercise!</h3>
     <% } %> 
   </div>
   <div class="picture-box">
@@ -20,6 +20,10 @@
     <a href="/exercises/new">log exercise</a>
     <a href="/exercises">exercises</a>
     <a href="/profiles">profiles</a>
+  </div>
+  <div id="site-info">
+    <h3>Healthy Habits</h3>
+    <p>This site was created to serve as a sounding board to help build healthy habits! With the ability to store and explore recipes and to track your exercise, this will be a place to find inspiration for the food and an active life to feed the soul.  </p>
   </div>
 </main>
 
