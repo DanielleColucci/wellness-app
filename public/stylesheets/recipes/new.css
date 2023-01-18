@@ -100,10 +100,14 @@ input, textarea {
   margin: 8px 32px 48px 0;
 }
 
+#recipe-header > button:hover {
+  text-decoration: underline;
+}
+
 #recipe-header > button:active {
-  background-color: #D88373;
-  border: 1px solid white;
-  color: white
+  background-color: white;
+  color: #D88373;
+  border: 1px solid #D88373;
 }
 
 #recipe-content {

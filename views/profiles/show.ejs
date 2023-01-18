@@ -16,25 +16,28 @@
     </div>
   </div>
   <div id="recipes">
-    <h2><%= isSelf ? 'Your Recipes' : `${profile.name}'s Recipes` %> </h2>
+    <div id="recipe-header">
+      <h2><%= isSelf ? 'Your Recipes' : `${profile.name}'s Recipes` %> </h2>
+      <a href="/recipes/new">New Recipe→</a>
+    </div>
     <% if (profile.recipes.length) { %>
-      <div id="card-container">
+      <div class="card-container">
         <% profile.recipes.forEach(recipe => { %>
           <div class="card">
-            <div class="card-top">
+            <div class="card-left">
               <%= recipe.name %>
             </div>
-            <div class="card-middle">
+            <div class="card-right">
               <% if (recipe.owner.equals(user?.profile._id)) { %>
                 <a href="/recipes/<%= recipe._id %>/edit">
-                  <button type="submit">Edit→</button>
+                  <button type="submit">Edit</button>
                 </a>
                 <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-                  <button type="submit">Delete→</button>
+                  <button type="submit">Delete</button>
                 </form>
               <% } %>
+              <a href="/recipes/<%= recipe._id %>">Details→</a>
             </div>
-            <a href="/recipes/<%= recipe._id %>" class="card-bottom">Details→</a>
           </div>
         <% }) %>
       </div>
@@ -42,6 +45,40 @@
       <p id="no-recipe-msg">
         <%= isSelf ? "You haven't" : "This user hasn't" %> created any recipes yet. 
         <%= isSelf ? 'Use the button above to make one!' : '' %>
+      </p>
+    <% } %> 
+  </div>
+  <div id="exercises">
+    <div id="exercise-header">
+      <h2><%= isSelf ? 'Your Exercises' : `${profile.name}'s Exercises` %> </h2>
+      <a href="/exercises/new">New Exercise Log→</a>
+    </div>
+    <% if (profile.exercises.length) { %>
+      <div class="card-container">
+        <% profile.exercises.forEach(exercise => { %>
+          <div class="card">
+            <div class="card-left">
+              <p><%= exercise.type %></p>
+              <p><%= exercise.date.toLocaleDateString() %></p>
+            </div>
+            <div class="card-right">
+              <% if (exercise.owner.equals(user?.profile._id)) { %>
+                <a href="/exercises/<%= exercise._id %>/edit">
+                  <button type="submit">Edit</button>
+                </a>
+                <form action="/exercises/<%= exercise._id %>?_method=DELETE" method="POST">
+                  <button type="submit">Delete</button>
+                </form>
+              <% } %>
+              <a href="/exercises/<%= exercise._id %>">Details→</a>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } else { %>
+      <p id="no-exercise-msg">
+        <%= isSelf ? "You haven't" : "This user hasn't" %> logged any exercises yet. 
+        <%= isSelf ? 'Use the button above to make a new log!' : '' %>
       </p>
     <% } %> 
   </div>

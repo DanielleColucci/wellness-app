@@ -43,25 +43,51 @@ h1 {
   font-size: 14px;
 }
 
-#recipes {
+#recipes, #exercises {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#recipes > h2 {
+#recipe-header, #exercise-header {
   width: 100%;
+  height: 100px;
   background-color: #EF5D60;
   color: white;
-  height: 100px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0;
+  gap: 8px;
 }
 
-#no-recipe-msg, #card-container {
+#recipe-header > h2, #exercise-header > h2 {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+#recipe-header > a,
+#exercise-header > a {
+  background-color: white;
+  color: #223843;
+  border: 1px solid #c3c3c3;
+  border-radius: 5px;
+  padding: 0 4px;
+}
+
+#recipe-header > a:hover,
+#exercise-header > a:hover {
+  text-decoration: underline;
+}
+
+#recipe-header > a:active,
+#exercise-header > a:active {
+  color: #c3c3c3
+}
+
+.card-container, #no-recipe-msg, #no-exercise-msg {
   background-color: #223843;
   color: white;
   width: 90%;
@@ -70,84 +96,85 @@ h1 {
   margin: 0;
 }
 
-#no-recipe-msg {
+#no-recipe-msg, #no-exercise-msg {
   text-align: center;
   padding: 48px;
   font-size: 20px;
 }
 
-#card-container {
+.card-container {
   padding: 24px 20px 200px 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
-  gap: 5%;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.card-container:last-child {
   margin-bottom: 100px;
 }
 
 .card { 
   background-color: #D6DAF5;
   color: white;
-  padding: 10px 0;
   display: flex;
-  flex-direction: column;
+  padding: 16px 32px;
   align-items: center;
   justify-content: space-between;
-  min-height: 200px;
-  width: 300px;
+  /* min-height: 200px; */
+  width: 80%;
   overflow-wrap: break-word;
   box-shadow: 5px 5px white;
 }
 
-.card-top {
+.card-left {
   background-color: white;
   color: #223843;
-  font-size: 24px;
-  width: 80%;
-  text-align: center;
+  font-size: 20px;
+  width: 66%;
   border: 1px solid #D88373;
   box-shadow: 5px 5px #D88373;
   padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
-.card-middle {
-  width: 80%;
+.card-left > p {
+  margin: 0;
+}
+
+.card-left > p:last-child {
+  font-size: 16px;
+}
+
+.card-right {
+  width: 33%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 8px;
 }
 
-.card-middle > a > button,
-.card-middle > form > button {
-  width: 80px;
-  font-size: 14px;
-  background-color: white;
-  color: #223843;
-  border: 1px solid #223843;
-  border-radius: 5px;
-}
-
-.card-middle > a > button:active,
-.card-middle > form > button:active {
-  background-color: #D88373;
-  color: white;
-  border: 1px solid white;
-}
-
-.card-middle > a > button:hover,
-.card-middle > form > button:hover, 
-.card-bottom:hover {
-  text-decoration: underline;
-}
-
-.card-bottom {
-  margin: 4px 16px;
-  padding-left: 16px;
-  width: 80%;
+.card-right > a > button,
+.card-right > form > button,
+.card-right > a:last-child {
+  font-size: 12px;
   background-color: white;
   color: #223843;
   border: 1px solid #D88373;
-  text-align: left;
   box-shadow: 5px 5px #D88373;
+  height: 24px;
+}
+
+.card-right > a > button:hover,
+.card-right > form > button:hover, 
+.card-right > a:hover {
+  text-decoration: underline;
+}
+
+.card-right > a:last-child {
+  padding: 1px 6px;
 }
