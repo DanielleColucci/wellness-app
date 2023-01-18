@@ -2,8 +2,17 @@ import { Exercise } from '../models/exercise.js'
 import { Profile } from '../models/profile.js'
 
 function newExercise(req, res) {
+  const newExercise = new Exercise()
+  let defaultDate = newExercise.date
+  let month= defaultDate.getMonth() + 1
+  month = month.toString().padStart(2, '0')
+  const day = defaultDate.getDate().toString().padStart(2, '0')
+  const year = defaultDate.getFullYear().toString()
+  defaultDate = `${year}-${month}-${day}`
+  console.log(defaultDate);
   res.render('exercises/new', {
     title: 'Log Exercise',
+    defaultDate
   })
 }
 
