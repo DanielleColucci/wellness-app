@@ -57,9 +57,20 @@ function show(req, res) {
   })
 }
 
+function edit(req, res) {
+  Exercise.findById(req.params.id)
+  .then(exercise => {
+    res.render('exercises/edit', {
+      exercise,
+      title: 'Edit Exercise'
+    })
+  })
+}
+
 export {
   newExercise as new,
   create,
   index,
   show, 
+  edit, 
 }

@@ -13,6 +13,9 @@ router.get('/new', isLoggedIn, exercisesCtrl.new)
 // GET /exercises/:id
 router.get('/:id', exercisesCtrl.show)
 
+// GET /exercises/:id/edit
+router.get('/:id/edit', isLoggedIn, exercisesCtrl.edit)
+
 // POST /exercises
 router.post('/', isLoggedIn, exercisesCtrl.create)
 
