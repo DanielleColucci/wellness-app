@@ -19,6 +19,9 @@ router.get('/:id/edit', isLoggedIn, exercisesCtrl.edit)
 // POST /exercises
 router.post('/', isLoggedIn, exercisesCtrl.create)
 
+// PUT /exercises/:id
+router.put('/:id', isLoggedIn, exercisesCtrl.update)
+
 export {
   router
 }

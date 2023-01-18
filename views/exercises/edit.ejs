@@ -3,7 +3,7 @@
 
 <main>
   <h1>Editing Exercise from <%= exercise.date.toLocaleDateString() %></h1>
-  <form action="/exercises" method="POST">
+  <form action="/exercises/<%= exercise._id %>?_method=PUT" method="POST">
     <label for="type-select">Exercise Type*:</label>
     <select name="type" id="type-select">
       <option value="<%= exercise.type %>" selected><%= exercise.type %></option>

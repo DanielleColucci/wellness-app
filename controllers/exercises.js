@@ -67,10 +67,30 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  Exercise.findById(req.params.id)
+  .then(exercise => {
+    if (exercise.owner.equals(req.user.profile._id)) {
+      req.body.share = !!req.body.share
+      exercise.updateOne(req.body)
+      .then(() => {
+        res.redirect(`/exercises/${exercise._id}`)
+      })
+    } else {
+      throw new Error('NOT AUTHORIZED')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/exercises')
+  })
+}
+
 export {
   newExercise as new,
   create,
   index,
   show, 
   edit, 
+  update,
 }
