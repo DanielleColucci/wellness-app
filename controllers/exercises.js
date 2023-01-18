@@ -9,7 +9,7 @@ function newExercise(req, res) {
 
 function create(req, res) {
   req.body.share = !!req.body.share
-  req.body.owner - req.user.profile._id
+  req.body.owner = req.user.profile._id
   Exercise.create(req.body) 
   .then(exercise => {
     Profile.findById(req.user.profile._id)
@@ -33,7 +33,7 @@ function index(req, res) {
   .then(exercises => {
     res.render('exercises/index', {
       exercises,
-      title: 'Exercises'
+      title: 'Public Exercises'
     })
   })
   .catch(err => {

@@ -1,0 +1,29 @@
+<%- include('../partials/html-head') %> 
+<%- include('../partials/nav') %>
+
+<main>
+  <div id="header">
+    <img src="" alt="">
+    <section id="title">
+      <h1><%= title %></h1>
+    </section>
+  </div>
+  <section id="content">
+    <div id="card-container">
+      <% exercises.forEach(exercise => { %>
+        <div class="card">
+          <div class="card-title">
+            <h2><%= exercise.type %></h2>
+            <h3><%= exercise.owner.name %></h3>
+            <h4><%= exercise.date.toLocaleDateString() %></h4>
+          </div>
+          <div class="details-button">
+            <a href="/exercise/<%= exercise._id %>">Details→	</a>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %> 
