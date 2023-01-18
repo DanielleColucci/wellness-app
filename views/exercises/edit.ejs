@@ -1,46 +1,57 @@
 <%- include('../partials/html-head') %> 
+<link rel="stylesheet" href="/stylesheets/exercises/edit.css">
 <%- include('../partials/nav') %> 
 
 <main>
   <h1>Editing Exercise from <%= exercise.date.toLocaleDateString() %></h1>
   <form action="/exercises/<%= exercise._id %>?_method=PUT" method="POST">
-    <label for="type-select">Exercise Type*:</label>
-    <select name="type" id="type-select">
-      <option value="<%= exercise.type %>" selected><%= exercise.type %></option>
-      <option value="Run">Run</option>
-      <option value="Walk">Walk</option>
-      <option value="Elliptical">Elliptical</option>
-      <option value="Cardio">Cardio</option>
-      <option value="HIIT">HIIT</option>
-      <option value="Yoga">Yoga</option>
-      <option value="Stretching">Stretching</option>
-      <option value="Strength Training">Strength Training</option>
-      <option value="Weights">Weights</option>
-      <option value="Bike">Bike</option>
-      <option value="Spin">Spin</option>
-      <option value="Swim">Swim</option>
-      <option value="Pilates">Pilates</option>
-      <option value="Kickboxing">Kickboxing</option>
-      <option value="Sport">Sport</option>
-      <option value="Zumba">Zumba</option>
-      <option value="Other">Other</option>
-    </select>
-    <label for="duration-input">Duration (in minutes):</label>
-    <input type="number" name="duration" value="<%= exercise.duration %>">
-    <label for="date-select">Date:</label>
-    <input type="date" name="date" required value="<%= exercise.date %>">
-    <label for="share-checkbox">
-      <p>Make Public?</p>
-      <p>(When checked, this log will appear in the exercises tab with other users' public exercises. Otherwise, it will be viewable only when a user selects your profile)</p>
-    </label>
-    <input 
-      type="checkbox"
-      name="share"
-      id="share-checkbox"
-      <%= exercise.share ? 'checked' : '' %>
-    >
-    <label for="comments-textarea">Additional Comments:</label>
-    <textarea name="comments" id="comments-textarea" placeholder="Comments..."><%= exercise.comments %></textarea>
-    <button type="submit">Update Exercise</button>
+    <div id="type">
+      <label for="type-select">Exercise Type*:</label>
+      <select name="type" id="type-select">
+        <option value="<%= exercise.type %>" selected><%= exercise.type %></option>
+        <option value="Run">Run</option>
+        <option value="Walk">Walk</option>
+        <option value="Elliptical">Elliptical</option>
+        <option value="Cardio">Cardio</option>
+        <option value="HIIT">HIIT</option>
+        <option value="Yoga">Yoga</option>
+        <option value="Stretching">Stretching</option>
+        <option value="Strength Training">Strength Training</option>
+        <option value="Weights">Weights</option>
+        <option value="Bike">Bike</option>
+        <option value="Spin">Spin</option>
+        <option value="Swim">Swim</option>
+        <option value="Pilates">Pilates</option>
+        <option value="Kickboxing">Kickboxing</option>
+        <option value="Sport">Sport</option>
+        <option value="Zumba">Zumba</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div id="duration">
+      <label for="duration-input">Duration (in minutes):</label>
+      <input type="number" name="duration" id="duration-input" value="<%= exercise.duration %>">
+    </div>
+    <div id="date">
+      <label for="date-select">Date:</label>
+      <input type="date" name="date" id="date-select" required value="<%= exercise.date %>">
+    </div>
+    <div id="share">
+      <label for="share-checkbox">
+        <p>Make Public?</p>
+        <p>(When checked, this log will appear in the exercises tab with other users' public exercises. Otherwise, it will be viewable only when a user selects your profile)</p>
+      </label>
+      <input 
+        type="checkbox"
+        name="share"
+        id="share-checkbox"
+        <%= exercise.share ? 'checked' : '' %>
+      >
+    </div>
+    <div id="comments">
+      <label for="comments-textarea">Additional Comments:</label>
+      <textarea name="comments" id="comments-textarea" placeholder="Comments..."><%= exercise.comments %></textarea>
+    </div>
+    <button id="update-btn" type="submit">Update Exercise</button>
   </form>
 </main>
