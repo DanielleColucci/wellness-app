@@ -14,7 +14,7 @@
         <p>Posted by:</p>
         <p>
           <img src="<%= recipe.owner.avatar %>" alt="<%= recipe.owner.name %>'s avatar">
-          <%= recipe.owner.name %>
+          <a href="/profiles/<%= recipe.owner._id %>"><%= recipe.owner.name %></a>
         </p>
         <% if (recipe.owner.equals(user?.profile._id)) { %>
           <section>
