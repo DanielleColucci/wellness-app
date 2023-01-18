@@ -46,8 +46,7 @@ nav > div {
 }
 
 @media only screen and (max-width: 800px) {
-  #nav-links > a:nth-child(2),
-  #nav-links > a:nth-child(4), 
+  #new-recipe, #new-exercise, 
   #my-profile-btn {
     display: none;
   }
@@ -124,4 +123,8 @@ button {
   border-radius: 5px;
   border: 1px solid #e3e3e3;
   padding: 3px 7px;
+}
+
+#nav-links > a > i.active {
+  color: #6b6f8d;
 }

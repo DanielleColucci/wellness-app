@@ -5,9 +5,9 @@
 <body>
   <nav>
     <div id="nav-links">
-      <a href="/"><i class="fas fa-rainbow fa-2x"></i></a>
+      <a href="/"><i class="fas fa-rainbow fa-2x <%- title === 'Healthy Habits' ? "active" : '' %>"></i></a>
       <% if (user) { %>
-        <a 
+        <a id="new-recipe"
           href="/recipes/new" <%- title === 'New Recipe' ? 'class="active"' : '' %> 
         >
           add new recipe
@@ -19,7 +19,7 @@
         recipes
       </a>
       <% if (user) { %>
-        <a 
+        <a id="new-exercise"
           href="/exercises/new" <%- title === 'Log Exercise' ? 'class="active"' : '' %>
         >
           log exercise
