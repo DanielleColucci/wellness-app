@@ -59,7 +59,7 @@
           <div class="card">
             <div class="card-left">
               <p><%= exercise.type %></p>
-              <p><%= exercise.date.toLocaleDateString() %></p>
+              <p><%= exercise.date.toISOString().slice(0, 10) %></p>
             </div>
             <div class="card-right">
               <% if (exercise.owner.equals(user?.profile._id)) { %>

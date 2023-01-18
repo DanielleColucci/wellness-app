@@ -73,10 +73,10 @@ function show(req, res) {
 function edit(req, res) {
   Exercise.findById(req.params.id)
   .then(exercise => {
-    let month= exercise.date.getMonth() + 1
+    let month= exercise.date.getUTCMonth() + 1
     month = month.toString().padStart(2, '0')
-    const day = exercise.date.getDate().toString().padStart(2, '0')
-    const year = exercise.date.getFullYear().toString()
+    const day = exercise.date.getUTCDate().toString().padStart(2, '0')
+    const year = exercise.date.getUTCFullYear().toString()
     res.render('exercises/edit', {
       exercise,
       month,

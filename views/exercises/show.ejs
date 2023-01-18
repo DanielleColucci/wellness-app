@@ -22,7 +22,7 @@
     </div>
     <div>
       <div>Date:</div>
-      <div><%= exercise.date.toLocaleDateString() %></div>
+      <div><%= exercise.date.toISOString().slice(0, 10) %></div>
     </div>
     <div>
       <div>Additional Comments:</div>

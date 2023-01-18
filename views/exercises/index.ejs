@@ -20,7 +20,7 @@
             <div class="card-title">
               <h2><%= exercise.type %></h2>
               <h3><%= exercise.owner.name %></h3>
-              <h4><%= exercise.date.toLocaleDateString() %></h4>
+              <h4><%= exercise.date.toISOString().slice(0, 10) %></h4>
             </div>
             <div class="details-button">
               <a href="/exercises/<%= exercise._id %>">Details→	</a>
