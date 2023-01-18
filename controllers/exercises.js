@@ -17,7 +17,11 @@ function create(req, res) {
       profile.exercises.push(exercise)
       profile.save()
       .then(() => {
-        res.redirect(`/profiles/${req.user.profile._id}`)
+        if (req.body.share) {
+          res.redirect('/exercises')
+        } else {
+          res.redirect(`/profiles/${req.user.profile._id}`)
+        }
       })
     })
   })
@@ -74,7 +78,11 @@ function update(req, res) {
       req.body.share = !!req.body.share
       exercise.updateOne(req.body)
       .then(() => {
-        res.redirect(`/exercises/${exercise._id}`)
+        if (req.body.share) {
+          res.redirect(`/exercises/${exercise._id}`)
+        } else {
+          res.redirect('/exercises')
+        }
       })
     } else {
       throw new Error('NOT AUTHORIZED')
