@@ -6,15 +6,41 @@
   <nav>
     <div id="nav-links">
       <a href="/"><i class="fas fa-rainbow fa-2x"></i></a>
-      <a href="/recipes/new">add new recipe</a>
-      <a href="/recipes">recipes</a>
-      <a href="/exercises/new">log exercise</a>
-      <a href="/exercises">exercises</a>
-      <a href="/profiles">profiles</a>
+      <% if (user) { %>
+        <a 
+          href="/recipes/new" <%- title === 'New Recipe' ? 'class="active"' : '' %> 
+        >
+          add new recipe
+        </a>
+      <% } %>
+      <a 
+        href="/recipes" <%- title === 'All Recipes' ? 'class="active"' : '' %>
+      >
+        recipes
+      </a>
+      <% if (user) { %>
+        <a 
+          href="/exercises/new" <%- title === 'Log Exercise' ? 'class="active"' : '' %>
+        >
+          log exercise
+        </a>
+      <% } %>
+      <a 
+        href="/exercises" <%- title === 'Public Exercises' ? 'class="active"' : '' %>
+      >
+        exercises
+      </a>
+      <% if (user) { %>
+        <a 
+          href="/profiles" <%- title === 'Profiles' ? 'class="active"' : '' %>
+        >
+          profiles
+        </a>
+      <% } %>
     </div>
     <div id="login-links">
       <% if (user) { %>
-        <a id="my-profile-btn" href="/profiles/<%= user.profile._id %>">your profile</a>
+        <a id="my-profile-btn" href="/profiles/<%= user.profile._id %>" <%- title === `${user.profile.name}'s Profile` ? 'class="active"' : '' %>>your profile</a>
         <a id="logout-link" href="/auth/logout">
           <button type="submit">logout</button>
         </a>

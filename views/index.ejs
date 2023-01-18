@@ -6,7 +6,7 @@
   <div id="login-msg">
     <h1>welcome, <%= user ? user.profile.name : "friend" %></h1>
     <% if(!user) { %>
-      <h3>sign in to create your own recipes and log your exercise!</h3>
+      <h3>sign in to create your own recipes, log your exercise, and view users' profiles!</h3>
     <% } %> 
   </div>
   <div class="picture-box">
@@ -15,11 +15,17 @@
     <img src="/assets/toast.jpeg" alt="peanut butter-banana and avocado toasts">
   </div>
   <div class="nav-buttons">
-    <a href="/recipes/new">add new recipe</a>
+    <% if (user) { %>
+      <a href="/recipes/new">add new recipe</a>
+    <% } %>
     <a href="/recipes">all recipes</a>
-    <a href="/exercises/new">log exercise</a>
+    <% if (user) { %>
+      <a href="/exercises/new">log exercise</a>
+    <% } %>
     <a href="/exercises">exercises</a>
-    <a href="/profiles">profiles</a>
+    <% if (user) { %>
+      <a href="/profiles">profiles</a>
+    <% } %>
   </div>
   <div id="site-info">
     <h3>Healthy Habits</h3>

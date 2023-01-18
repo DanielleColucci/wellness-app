@@ -13,7 +13,6 @@ html {
 
 body {
   background-color: white;
-  color: #3b4274;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: 'Poppins', system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
@@ -117,4 +116,12 @@ button:hover {
 
 button {
   font-family: 'Poppins', sans-serif;
+}
+
+#login-links > a.active, #nav-links > a.active {
+  background-color: #6b6f8d;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid #e3e3e3;
+  padding: 3px 7px;
 }
