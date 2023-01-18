@@ -12,7 +12,14 @@ function create(req, res) {
   req.body.owner - req.user.profile._id
   Exercise.create(req.body) 
   .then(exercise => {
-    res.redirect(`/profiles/${req.user.profile._id}`)
+    Profile.findById(req.user.profile._id)
+    .then(profile => {
+      profile.exercises.push(exercise)
+      profile.save()
+      .then(() => {
+        res.redirect(`/profiles/${req.user.profile._id}`)
+      })
+    })
   })
   .catch(err => {
     console.log(err)

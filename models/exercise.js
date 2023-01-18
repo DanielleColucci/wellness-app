@@ -1,4 +1,4 @@
-import { mongoose } from "mongoose"
+import mongoose from "mongoose"
 
 const Schema = mongoose.Schema
 
@@ -7,7 +7,8 @@ const exerciseSchema = new Schema({
   duration: Number, 
   date: {type: Date, required: true},
   share: Boolean, 
-  comments: String
+  comments: String,
+  owner: {type: Schema.Types.ObjectId, ref: 'Profile'}
 }, {
   timestamps: true
 })
