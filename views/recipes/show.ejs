@@ -3,7 +3,14 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1><%= recipe.name %></h1>
+  <div id="header">
+    <h1><%= recipe.name %></h1>
+    <% if (user) { %>
+      <h2>Posted by <a href="/profiles/<%= user.profile._id %>"><%= recipe.owner.name %></a></h2>
+    <% } else { %>
+      <h2>Posted by <%= recipe.owner.name %></h2>
+    <% } %> 
+  </div>
   <div id="recipe">
     <div id="recipe-header">
       <div id="header-left">

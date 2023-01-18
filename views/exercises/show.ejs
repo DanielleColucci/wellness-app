@@ -5,7 +5,11 @@
 <main>
   <div id="header">
     <h1><%= exercise.type %></h1>
-    <h2>Posted by <%= exercise.owner.name %></h2>
+    <% if (user) { %>
+      <h2>Posted by <a href="/profiles/<%= user.profile._id %>"><%= exercise.owner.name %></a></h2>
+    <% } else { %>
+      <h2>Posted by <%= exercise.owner.name %></h2>
+    <% } %> 
   </div>
   <div id="exercise-content">
     <div>
