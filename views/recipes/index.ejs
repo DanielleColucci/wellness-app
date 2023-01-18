@@ -7,6 +7,9 @@
     <img src="/assets/header-photo.jpeg" alt="photo of dinner table">
     <section id="title">
       <h1>Recipes</h1>
+      <% if (user) { %>
+        <a href="/recipes/new">add new recipe→</a>
+      <% } %>
     </section>
   </div>
   <section id="content">

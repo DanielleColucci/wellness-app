@@ -13,18 +13,39 @@
 }
 
 #title {
+  background-color: #67CFD3;
   position: absolute;
   top: 64px;
   width: 75%;
   max-width: 750px;
   min-height: 150px;
-  font-size: 48px;
-  background-color: #67CFD3;
-  color: white;
   display: flex; 
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+h1 {
+  color: white;
+  font-size: 48px;
+  margin: 0;
+}
+
+#title > a {
+  background-color: white;
+  color: #67CFD3;
+  padding: 0 8px;
+  border: 1px solid #67CFD3;
+  box-shadow: 5px 5px white;
+}
+
+#title > a:hover {
+  text-decoration: underline;
+}
+
+#title > a:visited {
+  color: #67CFD3;
 }
 
 @media only screen and (max-width: 800px) {
@@ -33,7 +54,11 @@
   }
 
   h1 {
-    font-size: 44px;
+    font-size: 40px;
+  }
+
+  #title > a {
+    margin-bottom: 12px;
   }
 }
 

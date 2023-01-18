@@ -7,6 +7,9 @@
     <img src="/assets/yoga.jpeg" alt="lady doing yoga at sunset">
     <section id="title">
       <h1><%= title %></h1>
+      <% if (user) { %>
+        <a href="/exercises/new">log exercise→</a>
+      <% } %>
     </section>
   </div>
   <section id="content">
