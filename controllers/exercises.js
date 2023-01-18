@@ -3,10 +3,24 @@ import { Profile } from '../models/profile.js'
 
 function newExercise(req, res) {
   res.render('exercises/new', {
-    title: 'log exercise'
+    title: 'log exercise',
+  })
+}
+
+function create(req, res) {
+  req.body.share = !!req.body.share
+  req.body.owner - req.user.profile._id
+  Exercise.create(req.body) 
+  .then(exercise => {
+    res.redirect(`/profiles/${req.user.profile._id}`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
   })
 }
 
 export {
   newExercise as new,
+  create,
 }

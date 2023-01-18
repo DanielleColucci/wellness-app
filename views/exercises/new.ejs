@@ -27,7 +27,7 @@
     <label for="duration-input">Duration (in minutes):</label>
     <input type="number" name="duration">
     <label for="date-select">Date:</label>
-    <input type="date" name="date">
+    <input type="date" name="date" required>
     <label for="share-checkbox">
       <p>Make Public?</p>
       <p>(When checked, this log will appear in the exercises tab with other users' public exercises. Otherwise, it will be viewable only when a user selects your profile)</p>
@@ -35,6 +35,7 @@
     <input type="checkbox" name="share" id="share-checkbox" checked>
     <label for="comments-textarea">Additional Comments:</label>
     <textarea name="comments" id="comments-textarea" placeholder="Comments..."></textarea>
+    <button type="submit">Add Exercise!</button>
   </form>
 </main>
 
