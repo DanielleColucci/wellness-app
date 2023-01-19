@@ -4,7 +4,7 @@
 
 <main>
   <div id="login-msg">
-    <h1>welcome, <%= user ? user.profile.name : "friend" %></h1>
+    <h1>welcome<%= user ? `, ${user.profile.name}` : '!' %></h1>
     <% if(!user) { %>
       <h3>sign in to create your own recipes, log your exercise, and view users' profiles!</h3>
     <% } %> 
