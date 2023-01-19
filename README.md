@@ -1,8 +1,8 @@
 # Healthy Habits
 
-![Home Page with a welcome message and three pictures of meals](./assets/home-page.png)
-![Recipes page displaying all recipes to the user](./assets/recipes-page.png)
-![Public exercises page displaying to the user exercise logs that other users have made public](./assets/exercise-page.png)
+![Home Page with a welcome message and three pictures of meals](./public/assets/home-page.png)
+![Recipes page displaying all recipes to the user](./public/assets/recipes-page.png)
+![Public exercises page displaying to the user exercise logs that other users have made public](./public/assets/exercise-page.png)
 
 Healthy Habits is a site that was designed with the intention of incouraging the development of habits to encourage wellness. Wellness is as much a state of mind as it is a physical goal, and developing habits is key to maintaining a healthy lifestyle. Health also depends not only on physical exercise, but also an adequate and nutritious diet. It can often feel exhausting, daunting, and isolating trying to incorporate healthy habits into our routines, so this the app serves as a place for both users and guests to explore recipes and exercises to gain inspiration, insight, and community on the journey to creating healthy routines or even just thinking of what to make for dinner or what to do at the gym. Best functionality of the app is experienced when users sign in using a Google account, as users are required to be logged in to create recipes, log exercise, and view other users' profile pages. Owners of recipes and exercise logs have the ability to edit and delete, while other users may only view details of both.  
 
