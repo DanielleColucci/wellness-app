@@ -17,6 +17,36 @@ function index(req, res) {
   })
 }
 
+function indexBreakfast(req, res) {
+  Recipe.find({meal: 'Breakfast'})
+  .then(recipes => {
+    res.render('recipes/mealIndex', {
+      recipes, 
+      title: 'Breakfast Recipes'
+    })
+  })
+}
+
+function indexLunch(req, res) {
+  Recipe.find({meal: 'Lunch'})
+  .then(recipes => {
+    res.render('recipes/mealIndex', {
+      recipes, 
+      title: 'Lunch Recipes'
+    })
+  })
+}
+
+function indexDinner(req, res) {
+  Recipe.find({meal: 'Dinner'})
+  .then(recipes => {
+    res.render('recipes/mealIndex', {
+      recipes, 
+      title: 'Dinner Recipes'
+    })
+  })
+}
+
 function newRecipe(req, res) {
   res.render('recipes/new', {
     title: 'New Recipe'
@@ -187,5 +217,8 @@ export {
   deleteRecipe as delete,
   createReview,
   addIngredient,
-  deleteReview
+  deleteReview,
+  indexBreakfast,
+  indexLunch, 
+  indexDinner,
 }

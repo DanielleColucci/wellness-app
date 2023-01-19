@@ -14,7 +14,11 @@
         </a>
       <% } %>
       <a 
-        href="/recipes" <%- title === 'All Recipes' ? 'class="active"' : '' %>
+        href="/recipes" 
+        <%- title === 'All Recipes' ? 'class="active"' : '' %>
+        <%- title === 'Breakfast Recipes' ? 'class="active"' : '' %>
+        <%- title === 'Lunch Recipes' ? 'class="active"' : '' %>
+        <%- title === 'Dinner Recipes' ? 'class="active"' : '' %>
       >
         recipes
       </a>

@@ -1,4 +1,4 @@
-import { Router } from 'express'
+import e, { Router } from 'express'
 import * as recipesCtrl from '../controllers/recipes.js'
 import { isLoggedIn } from '../middleware/middleware.js'
 
@@ -9,6 +9,15 @@ router.get('/', recipesCtrl.index)
 
 // GET /recipes/new
 router.get('/new', isLoggedIn, recipesCtrl.new)
+
+// GET /recipes/breakfast
+router.get('/breakfast', recipesCtrl.indexBreakfast)
+
+// GET /recipes/lunch
+router.get('/lunch', recipesCtrl.indexLunch)
+
+//GET /recipes/dinner
+router.get('/dinner', recipesCtrl.indexDinner)
 
 // GET /recipes/:id
 router.get('/:id', recipesCtrl.show)

@@ -33,7 +33,14 @@ h1 {
   margin: 0;
 }
 
-#title > a {
+#title > div {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  row-gap: 8px;
+}
+
+.all-button, .meal-button, #header-new-button {
   background-color: white;
   color: #67CFD3;
   padding: 0 8px;
@@ -41,11 +48,11 @@ h1 {
   box-shadow: 5px 5px white;
 }
 
-#title > a:hover {
+.all-button:hover, .meal-button:hover, #header-new-button:hover {
   text-decoration: underline;
 }
 
-#title > a:visited {
+.all-button:visited, .meal-button:visited, #header-new-button:visited {
   color: #67CFD3;
 }
 
@@ -58,8 +65,14 @@ h1 {
     font-size: 40px;
   }
 
-  #title > a {
+  #title > div {
     margin-bottom: 12px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .meal-button {
+    display: none;
   }
 }
 

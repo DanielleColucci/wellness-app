@@ -6,11 +6,9 @@
   <div id="header">
     <img src="/assets/header-photo.jpeg" alt="photo of dinner table">
     <section id="title">
-      <h1>Recipes</h1>
+      <h1><%= title %></h1>
       <div>
-        <a class="meal-button" href="/recipes/breakfast">breakfast→</a>
-        <a class="meal-button" href="/recipes/lunch">lunch→</a>
-        <a class="meal-button" href="/recipes/dinner">dinner→</a>
+        <a class="all-button" href="/recipes">all recipes→</a>
         <% if (user) { %>
           <a id="header-new-button" href="/recipes/new">add new recipe→</a>
         <% } %>
