@@ -167,6 +167,8 @@ h1 {
   border: 1px solid #D88373;
   box-shadow: 5px 5px #D88373;
   height: 24px;
+  display: flex; 
+  align-items: center;
 }
 
 .card-right > a > button:hover,
