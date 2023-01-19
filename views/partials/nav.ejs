@@ -19,6 +19,8 @@
         <%- title === 'Breakfast Recipes' ? 'class="active"' : '' %>
         <%- title === 'Lunch Recipes' ? 'class="active"' : '' %>
         <%- title === 'Dinner Recipes' ? 'class="active"' : '' %>
+        <%- title === 'Edit Recipe' ? 'class="active"' : '' %>
+        <%- (locals.recipe && title === recipe.name) ? 'class="active"' : '' %>
       >
         recipes
       </a>
@@ -30,7 +32,10 @@
         </a>
       <% } %>
       <a 
-        href="/exercises" <%- title === 'Public Exercises' ? 'class="active"' : '' %>
+        href="/exercises" 
+        <%- title === 'Public Exercises' ? 'class="active"' : '' %>
+        <%- title === 'Edit Exercise' ? 'class="active"' : '' %>
+        <%- title === 'Exercise Info' ? 'class="active"' : '' %>
       >
         exercises
       </a>
