@@ -44,7 +44,7 @@
     </div>
     <div id="login-links">
       <% if (user) { %>
-        <a id="my-profile-btn" href="/profiles/<%= user.profile._id %>" <%- title === `${user.profile.name}'s Profile` ? 'class="active"' : '' %>>your profile</a>
+        <a id="my-profile-btn" href="/profiles/<%= user.profile._id %>" <%- (locals.profile && profile._id.equals(user?.profile._id)) ? 'class="active"' : '' %>>your profile</a>
         <a id="logout-link" href="/auth/logout">
           <button type="submit">logout</button>
         </a>
