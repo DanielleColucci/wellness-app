@@ -18,7 +18,9 @@
   <div id="recipes">
     <div id="recipe-header">
       <h2><%= isSelf ? 'Your Recipes' : `${profile.name}'s Recipes` %> </h2>
-      <a href="/recipes/new">New Recipe→</a>
+      <% if (isSelf) { %>
+        <a href="/recipes/new">New Recipe→</a>
+      <% } %>
     </div>
     <% if (profile.recipes.length) { %>
       <div class="card-container">
@@ -51,7 +53,9 @@
   <div id="exercises">
     <div id="exercise-header">
       <h2><%= isSelf ? 'Your Exercises' : `${profile.name}'s Exercises` %> </h2>
-      <a href="/exercises/new">New Exercise Log→</a>
+      <% if (isSelf) { %>
+        <a href="/exercises/new">New Exercise Log→</a>
+      <% } %>
     </div>
     <% if (profile.exercises.length) { %>
       <div class="card-container">

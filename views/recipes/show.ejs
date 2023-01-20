@@ -18,11 +18,6 @@
         <div>Estimated Time: <%= recipe.estTime %> minutes</div>
       </div>
       <div id="header-right">
-        <p>Posted by:</p>
-        <p>
-          <img src="<%= recipe.owner.avatar %>" alt="<%= recipe.owner.name %>'s avatar">
-          <a href="/profiles/<%= recipe.owner._id %>"><%= recipe.owner.name %></a>
-        </p>
         <% if (recipe.owner.equals(user?.profile._id)) { %>
           <section>
             <a href="/recipes/<%= recipe._id %>/edit">

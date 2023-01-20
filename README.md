@@ -39,3 +39,4 @@ Healthy Habits is a site that was designed with the intention of incouraging the
 - [x] Filter recipes by meal category
 - [ ] Search for an exercise 
 - [ ] Functionality to specify quantity of a particular ingredient
+- [ ] Sort exercises by date in index and profile show views 

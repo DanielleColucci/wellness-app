@@ -134,6 +134,23 @@
             </ul>
           </div>
         </div>
+        <div id="Fruit">
+          <div class="food-group">Fruits:</div>
+          <div>
+            <ul>
+              <% ingredients.forEach(ingredient => { %>
+                <% if (ingredient.foodGroup === 'Fruit') { %>
+                  <li>
+                    <form action="/recipes/<%= recipe._id %>/ingredients/<%= ingredient._id %>" method="POST">
+                      <button class="add" type="submit">✓</button>
+                      <p><%= ingredient.name %></p>
+                    </form>
+                  </li>
+                <% } %> 
+              <% }) %>
+            </ul>
+          </div>
+        </div>
         <div id="herbs-spices">
           <div class="food-group">Herbs/Spices:</div>
           <div>
