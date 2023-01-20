@@ -36,6 +36,6 @@ Healthy Habits is a site that was designed with the intention of incouraging the
 - [ ] Journal entry model for the user to log journal text content on a particular date (CRD functionality) 
 - [ ] Including ice box features, a user should see recipes, exercises, summaries, and journal entries on their own page
 - [ ] Including ice box features, a user should see recipes, exercises, and summaries on another user's page 
-- [ ] Filter recipes by meal category
+- [x] Filter recipes by meal category
 - [ ] Search for an exercise 
 - [ ] Functionality to specify quantity of a particular ingredient
