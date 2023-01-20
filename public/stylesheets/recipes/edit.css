@@ -258,6 +258,7 @@ input, textarea {
 }
 
 #create-ingredients {
+  width: 100%;
   position: relative;
   top: 48px;
   display: flex;
@@ -267,6 +268,7 @@ input, textarea {
 }
 
 #create-ing-header {
+  width: 100%;
   background-color: #67CFD3;
   color: white;
   padding: 24px 48px;
@@ -277,7 +279,7 @@ input, textarea {
 }
 
 #create-ing-header > * {
-  max-width: 80%;
+  max-width: 700px;
 }
 
 #create-ing-header > h3 {
@@ -293,6 +295,7 @@ input, textarea {
   background-color: #223843;
   color: white;
   width: 90%;
+  max-width: 900px;
   height: 150px;
   display: flex;
   justify-content: center;
